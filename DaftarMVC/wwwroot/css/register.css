@@ -80,8 +80,10 @@ html
 }
 
 .icon-text-wrapper select{
+    padding: 12px 0 12px 0;
+    margin-top: 6px;
     text-align: center;
-    width: 100%;
+    width: 70%;
 }
 .register-right .register-sign-in-wrapper{
     display: flex;
@@ -107,9 +109,10 @@ html
 .register-right .register-sign-in-wrapper a {
     width: 100%;
 }
-.register-right .register-sign-in-wrapper a button{
+.register-right .register-sign-in-wrapper button{
     width: 100%;
     padding: 10px;
+    margin: 40px 0 0 0;
     border-radius: 6px;
     background-color: var(--background-color);
     color: var(--Stxt-color);
@@ -123,7 +126,11 @@ html
 }
 .register-left
 {
-    background: url(../Images/background3.png);
     background-size: 100% 100%;
     background-position: center;
+}
+
+.birthdate {
+    padding: 30px 30px;    
+    margin: 30px 30px;
 }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DaftarMVC.Controllers;
 
-public class User : Controller
+public class UserController : Controller
 {
     // GET
     public IActionResult Index()
