@@ -40,12 +40,13 @@ html
 .page .box
 {
     width: 900px;
-    height: 600px;
     border-radius: 2%;
     background: var(--background-Fbutton-color);
     display: grid;
     grid-template-columns: 40% 60%;
     box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .register-right{
@@ -133,4 +134,8 @@ html
 .birthdate {
     padding: 30px 30px;    
     margin: 30px 30px;
+}
+
+.sign-in span{
+    font-size: 12px;
 }
