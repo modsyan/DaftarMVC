@@ -1,4 +1,5 @@
 @model DaftarMVC.Models.User.User
+@inject IHttpContextAccessor HttpContextAccessor
 
 @{
     Layout = null;
@@ -33,22 +34,22 @@
   <body>
     <header>
       <div class="logo">
-        <a href="/Intro-Page/intro.html"
-          ><img src="assesti/daftar.svg" alt="logo"
-        /></a>
+        <a href="/">
+          <img src="assets/daftar.svg" alt="logo"/>
+        </a>
       </div>
       <nav>
         <ul class="nav_links">
-          <li><a href="user.html" style="color: black">Home</a></li>
-          <li><a href="/bundels/bundels.html">Bundles</a></li>
-          <li><a href="/teacher/teacher.html">Teacher</a></li>
+          <li><a href="User" style="color: black">Home</a></li>
+          <li><a href="/">Bundles</a></li>
+          <li><a href="/">Teacher</a></li>
         </ul>
       </nav>
       <div class="username">
-        <span><i class="fa-regular fa-user"></i>Hello,User</span>
-        <a href="/Intro-Page/intro.html" class="Log_btn"
-          ><button>Log Out</button></a
-        >
+        <span><i class="fa-regular fa-user"></i>Hello, @HttpContextAccessor.HttpContext.Session.GetString("Full Name") </span>
+        <a href="/" class="Log_btn">
+          <button onclick="">Log Out</button>
+        </a>
       </div>
     </header>
 

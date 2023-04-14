@@ -1,5 +1,6 @@
 using DaftarMVC.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     option =>
         option.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectionString"))
 );
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(option =>
+{
+    option.IdleTimeout = TimeSpan.FromSeconds(1);
+    option.Cookie.Name = ".UserAuth.Session";
+    option.Cookie.HttpOnly = true;
+    option.Cookie.IsEssential = true;
+});
+
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 
@@ -27,6 +39,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

@@ -6,36 +6,37 @@ namespace DaftarMVC.Controllers;
 
 public class LoginController : Controller
 {
+    private ApplicationDbContext _applicationDbContext;
+
+    public LoginController(ApplicationDbContext applicationDbContext)
+    {
+        _applicationDbContext = applicationDbContext;
+    }
+
     // GET
     [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
-    
+
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Index(string email, string password)
     {
-        var isAuth = false;
-        ApplicationDbContext db = new ApplicationDbContext();
-        User user = new User
-        {
-            Email = email,
-            Password = password,
-        };
-       
-        // CHECK USER ------------------------->
+        if (email == null || password == null) return View();
+        var encryptedPassword = AuthController.GetMD5(password);
+        var data = 
+            _applicationDbContext.Users
+            .Where(u => u.Email.Equals(email) && u.Password.Equals(encryptedPassword))
+            .ToList();
+        if (!data.Any()) return View();
         
+        HttpContext.Session.SetString("Full Name",
+            data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName);
+        HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
+        HttpContext.Session.SetInt32("idUser", data.FirstOrDefault().Id);
         
-        // CHECK USER <-------------------------
-        if (!isAuth)
-        {
-            return View();
-        }
-        else
-        {
-            return RedirectToAction("Index");
-        }
-        
+        return RedirectToAction("Index", "User");
     }
 }
