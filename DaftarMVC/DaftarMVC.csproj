@@ -27,10 +27,35 @@
       <None Include="wwwroot\assets\logo.svg" />
       <None Include="wwwroot\assets\moataz.svg" />
       <None Include="wwwroot\assets\reem.svg" />
+      <None Remove="Views\Pages\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Pages\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Views\Pages\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Views\Pages\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Views\Pages\**" />
+      <Content Remove="Views\User\UserSetState.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Pages\Chat.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Into.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Loading.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Student.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\Teacher.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pages\User.cshtml" />
     </ItemGroup>
 
 </Project>

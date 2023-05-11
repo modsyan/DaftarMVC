@@ -1,0 +1,41 @@
+.loading-container
+{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a89b2;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.loading-container div
+{
+    display: inline-flex;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #193440;
+    margin: 10px;
+    animation: loading-up-and-down 0.9s infinite alternate;
+}
+.loading-container .loading-two
+{
+    animation-delay: 0.6s;
+}
+.loading-container .loading-three
+{
+    animation-delay: 0.9s;
+}
+@keyframes loading-up-and-down{
+    from{
+        opacity: 0.6;
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

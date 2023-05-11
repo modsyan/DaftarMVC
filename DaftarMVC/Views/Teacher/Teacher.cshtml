@@ -1,0 +1,107 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Teacher";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Css/teacher.css" />
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <title>Daftar</title>
+</head>
+
+<body>
+    @Html.Partial("NavBar", Model)
+
+    <div class="search-box">
+        <div class="">
+            <input type="text" placeholder="Search a Teacher">
+        </div>
+    </div>
+    <div class="contant">
+        <div class="filters-menu">
+            <h3>Filters</h3>
+            <ul class="list-items">
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                    </span>
+                    <span class="item-text">matrial</span>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="images">
+
+                <div class="card-box" data-name="">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="" alt="photo">
+                        </div>
+                        <div class="name-profession">
+                            <span class="name"></span>
+                            <span class="profession"></span>
+                        </div>
+                        <div class="rating">
+                            <!-- star here -->
+                        </div>
+                        <div class="button-teacher">
+                            <button class="about-teacher">About Teacher</button>
+                            <button class="featuer">feature</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("Footer")
+</body>
+<script src="~/JS/teacher.js"></script>
+</html>
+
+

@@ -1,0 +1,161 @@
+:root 
+{
+    --background-color: #186B7A;
+    --background-Fbutton-color: #E9F7FA;
+    --background-Sbutton-color: #f9bc60;
+    --Ftxt-color: #001e1d;
+    --Stxt-color: #E9F7FA;
+    --btn-background-normal: #186b7a3f;
+    --hover-color: #f9bc60;
+    --randomColor-color: #e16162;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* end */
+.page
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 753px;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+.page .logo {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+.page .box
+{
+    width: 900px;
+    height: 600px;
+    border-radius: 2%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+}
+.page .box .login-right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.page .box .login-right h2
+{
+    text-align: center;
+    position: relative;
+    top: -32px;
+}
+.page .box div.inputs
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.page .box div.inputs .userPassword input,
+.page .box div.inputs .userName input
+{
+    padding: 5px;
+    margin: 10px;
+    transition: 500ms ease-out;
+    cursor: pointer;
+    border-bottom: 1px solid #0a89b2;
+    outline: none;
+}
+.page .box div.inputs .buttons
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap:9px;
+}
+    .page .box div.inputs .buttons input {
+        padding: 10px;
+        margin-left: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: var(--background-color);
+        color: var(--Stxt-color);
+        margin-top: 20px;
+        transition: all 1s ease;
+        width: 172.4px;
+    }
+.page .box div.inputs .buttons input:hover
+{
+    background-color: var(--background-Sbutton-color);
+    color: var(--Stxt-color);
+}
+.signup a
+{
+    text-decoration: none;
+    font-size: 10px;
+    color: #0a89b2;
+}
+.sgin
+{
+    font-size: 14px;
+    color: coral;
+    transition: all 1s ease;
+}
+.sgin:hover
+{
+    font-size: 15px;
+}
+.page .box div.inputs .inputs a
+{
+    text-decoration: none;
+    color: var(--txt-color);
+}
+.links
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    width: 240px;
+}
+#rem
+{
+    display: inline-flex;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+.re
+{
+    cursor: pointer;
+}
+.forget
+{
+    cursor: pointer;
+}
+.links a
+{
+    color: black;
+}
+i{
+    color: #0a89b2;
+}
+.login-left
+{
+    background: url(/Image/background3.png)no-repeat;
+    background-size: 100% 100%;
+    background-position: center; 
+}

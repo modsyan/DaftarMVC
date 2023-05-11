@@ -1,0 +1,88 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Bundels";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Css/framework.css" />
+    <link rel="stylesheet" href="~/Css/bundels.css" />
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>Daftar</title>
+</head>
+
+<body>
+
+@await Html.PartialAsync("NavBar", Model)
+
+<section>
+        <div class="container-first">
+            <div class="bundles-card card">
+                <div class="free">
+                    <h2>Free</h2>
+                </div>
+                <div class="money"><label>$0</label></div>
+                <div class="benfits-free benfits">
+                    <span>✔️ 1 user request</span>
+                    <span>✔️ 1 design account</span>
+                    <span>✔️ Email support</span>
+                    <span>✔️ 10 deployment</span>
+                </div>
+                <div class="start-free-btn">
+                    <a href="/Pages/Payment"><button class="button">Free</button></a>   
+                </div>
+            </div>
+            <div class="bundles-card card">
+                <div class="Premium">
+                    <h2>Premium</h2>
+                </div>
+                <div class="money"><label>$20</label></div>
+                <div class="benfits-Premium benfits">
+                    <span>✔️ 1 user request</span>
+                    <span>✔️ 3 design account</span>
+                    <span>✔️ Email support</span>
+                    <span>✔️ 100 deployment</span>
+                    <span>✔️ 24/7 Support</span>
+                    <span>✔️ Premium Support</span>
+                </div>
+                <div class="start-Premium-btn card-btn">
+                    <a href="/Pages/Payment"><button class="button">Premium</button></a>
+                </div>
+            </div>
+            <div class="bundles-card card">
+                <div class="Premium">
+                    <h2>Enterprise</h2>
+                </div>
+                <div class="money"><label>$105</label></div>
+                <div class="benfits-Premium benfits">
+                    <span>✔️ Unlimited user request</span>
+                    <span>✔️ 3 to 50 design account</span>
+                    <span>✔️ Email support</span>
+                    <span>✔️ 10 deployment</span>
+                    <span>✔️ Unlimited deployment</span>
+                    <span>✔️ Advanced security</span>
+                </div>
+                <div class="start-Premium-btn card-btn">
+                    <a href="/Pages/Payment"><button class="button">Enterprise</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+@await Html.PartialAsync("Footer")
+</body>
+</html>
+
+

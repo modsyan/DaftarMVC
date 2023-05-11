@@ -1,0 +1,134 @@
+:root 
+{
+    --background-color: #186B7A;
+    --background-Fbutton-color: #E9F7FA;
+    --background-Sbutton-color: #f9bc60;
+    --Ftxt-color: #001e1d;
+    --Stxt-color: #E9F7FA;
+    --btn-background-normal: #186b7a3f;
+    --hover-color: #f9bc60;
+    --randomColor-color: #e16162;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+html
+{
+    text-transform: uppercase;
+}
+/* end */
+.page
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 753px;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+.page .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+}
+.page .box
+{
+    width: 900px;
+    height: 600px;
+    border-radius: 2%;
+    background: var(--background-Fbutton-color);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+}
+
+.register-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.9rem;
+}
+
+.register-right .inputs-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.register-right .inputs-wrapper input{
+    padding: 10px;
+    background: none;
+    border-bottom: 1px solid var(--background-color);
+    outline: none;
+}
+.icon-text-wrapper{
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.icon-text-wrapper span i{
+    width: 20px;
+    text-align: center;
+    color: var(--background-color);
+}
+
+.icon-text-wrapper select{
+    text-align: center;
+    width: 100%;
+}
+.register-right .register-sign-in-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.register-right .register-sign-in-wrapper .sign-in a{
+    font-size: 11px;
+    color: var(--background-color);
+}
+.register-right .register-sign-in-wrapper .sign-in .sign{
+    color: var(--hover-color);
+    font-size: larger;
+    font-weight: 900;
+    transition: all 0.3s ease 0s;
+}
+.register-right .register-sign-in-wrapper .sign-in .sign:hover{
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+}
+.register-right .register-sign-in-wrapper a {
+    width: 100%;
+}
+.register-right .register-sign-in-wrapper input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: var(--background-color);
+        color: var(--Stxt-color);
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+}
+
+.register-right .register-sign-in-wrapper input:hover {
+        background-color: var(--background-Sbutton-color);
+        color: var(--Stxt-color);
+}
+.register-left
+{
+    background: url(../Image/background3.png)no-repeat;
+    background-size: 100% 100%;
+    background-position: center; 
+}

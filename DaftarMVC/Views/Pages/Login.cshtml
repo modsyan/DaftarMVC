@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Css/framework.css" />
+    <link rel="stylesheet" href="~/Css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <title>Daftar</title>
+</head>
+<body>
+    <div class="page">
+        <div class="logo">
+            <a href="/Intro-Page/intro.html">
+                <img src="~/Image/daftar.svg" alt="logo" />
+            </a>
+        </div>
+        @using (Html.BeginForm()){
+            <div class="box">
+                <div class="login-right">
+                    <div class="inputs">
+                        <h2>Login</h2>
+                        <div class="userName">
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <input required name="Email" type="email" autofocus placeholder="mo@example.com" />
+                        </div>
+                        <div class="userPassword">
+                            <span><i class="fa-solid fa-lock"></i></span>
+                            <input name="Password" type="password" placeholder="Password" />
+                        </div>
+                        <div class="links">
+                            <div class="checkbox">
+                                <input id="rem" value="Remeber me" type="checkbox" />
+                                <label for="rem" class="re">Remeber me</label>
+                            </div>
+                            <a href="/Loading-Page/loading.html"><span class="forget">Forget Password?</span></a>
+                        </div>
+                        <div class="buttons">
+                            <input value="Login" type="submit" />
+                            <div class="signup">
+                                <a href="/Pages/Register">
+                                    <span>Not Regesited? <span class="sgin">Sign Up</span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <label style="color:red;font-size:10px;">@ViewBag.x</label>
+                    </div>
+                </div>
+                <div class="login-left">
+                    <div></div>
+                </div>
+            </div>
+        }
+        </div>
+</body>
+</html>
+
+

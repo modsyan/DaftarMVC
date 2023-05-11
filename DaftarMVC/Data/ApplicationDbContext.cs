@@ -1,4 +1,4 @@
-using DaftarMVC.Models.User;
+using DaftarMVC.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,5 +14,8 @@ public class ApplicationDbContext : IdentityDbContext
     }
     
     public DbSet<User> Users { get; set; }
-    
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Favorite> Favorites { get; set; }
+    public DbSet<Teacher> Teacher { get; set; }
+
 }

@@ -1,5 +1,57 @@
-@model DaftarMVC.Models.User.User
+@* @model DaftarMVC.Models.User.User *@
+@* @{ *@
+@*     await Html.RenderPartialAsync("Header");     *@
+@* } *@
+
 @{
-    await Html.RenderPartialAsync("Header");    
+    ViewBag.Title = "Header";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="~/Css/framework.css" />
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>Daftar</title>
+</head>
+
+<body>
+<header>
+    <div class="header-nav">
+        <div class="logo">
+            <a href="/Pages/Into">
+                <img src="~/Image/daftar.svg" alt="logo" />
+            </a>
+        </div>
+        <ul class="nav_links">
+            <li class="active">
+                <a href="/Pages/Into">Welcome</a>
+            </li>
+        </ul>
+        <a href="/Pages/Register" class="Join_btn"><button class="button">Join US</button></a>
+    </div>
+    <div class="text-img">
+        <div class="text-header">
+            <h1>Find the Best Teachers & Learn</h1>
+        </div>
+        <div class="headerlogo">
+            <img src="~/Image/logo.svg" alt="a" />
+        </div>
+    </div>
+</header>
+</body>
+</html>
+
 

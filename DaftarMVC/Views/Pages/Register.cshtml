@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Css/framework.css" />
+    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="~/Css/register.css" />
+    <link rel="preconnect" href="https://fontsA.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcur icon" href="~/Image/Icon-Taps.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <title>Daftar</title>
+</head>
+<body>
+    <div class="page">
+        <div class="logo">
+            <a href="/Intro-Page/intro.html">
+                <img src="~/Image/daftar.svg" alt="logo" />
+            </a>
+        </div>
+        @using (Html.BeginForm()) {
+        <div class="box">
+            <div class="register-right">
+                <div class="register-wrapper">
+                    <h2>Register</h2>
+                </div>
+                <div class="inputs-wrapper">
+                    <div class="userName icon-text-wrapper">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <input required name="UserName" type="text" autofocus placeholder="Username" />
+                    </div>
+                    <div class="userEmail icon-text-wrapper">
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <input required name="Email" type="email" autofocus placeholder="mo@example.com" />
+                    </div>
+                    <div class="userPassword icon-text-wrapper">
+                        <span><i class="fa-solid fa-lock"></i></span>
+                        <input required name="Password" type="password" placeholder="Password" />
+                    </div>
+                    <div class="userPassword icon-text-wrapper">
+                        <span><i class="fa-solid fa-lock"></i></span>
+                        <input required name="ConfirmPassword" type="password" placeholder="Confirm Password" />
+                    </div>
+                    <label style="color:red;font-size:10px;">@ViewBag.x</label>
+                    <div class="userGrade icon-text-wrapper">
+                        <span><i class="fa-solid fa-graduation-cap"></i></span>
+                        <select required name="Grade">
+                            <option value="" disabled selected>Choose your grade</option>
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="register-sign-in-wrapper">
+                    <input value="Regiser" type="submit" />
+                    <div class="sign-in">
+                        <a href="/Pages/Login">
+                            <span>
+                                Already have an account?
+                                <span class="sign"> Login</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="register-left">
+                <div></div>
+            </div>
+        </div>
+        }
+    </div>
+</body>
+</html>
+

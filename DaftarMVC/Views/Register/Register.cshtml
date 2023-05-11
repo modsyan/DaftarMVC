@@ -1,0 +1,146 @@
+@model DaftarMVC.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    @* <link rel="stylesheet" href="framework.css" /> *@
+    <link rel="stylesheet" href="css/font.css"/>
+    <link rel="stylesheet" href="css/register.css"/>
+    <link rel="preconnect" href="https://fontsA.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    @* <link rel="shortcur icon" href="image/icon1.jfif" /> *@
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+        rel="stylesheet"/>
+    <script
+        src="https://kit.fontawesome.com/87603dad33.js"
+        crossorigin="anonymous"></script>
+    <title>Register</title>
+</head>
+<body>
+<div class="page">
+    <div class="logo">
+        <a href="/">
+            <img src="assets/daftar.svg" alt="logo"/>
+            @* <object data="assets/daftar.svg" type="image/svg+xml"/> *@
+        </a>
+    </div>
+    <div class="box">
+        <div class="register-right">
+            <div class="register-wrapper">
+                <h1>Register</h1>
+            </div>
+
+            @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+            {
+                <form method="post">
+                    
+                    <div class="inputs-wrapper">
+                        <div class="userName icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            @* <input type="text" autofocus placeholder="First Name" name="u.firstName"/> *@
+                            @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" })
+                        </div>
+                        
+                        <div class="userName icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            @* <input type="text" autofocus placeholder="Last Name" name="u.lastName"/> *@
+                            @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", @placeholder = "Last Name" })
+
+                        </div>
+
+                        <div class="userName icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            @* <input type="text" autofocus placeholder="PhoneNumber" name="u.phoneNumber"/> *@
+                            @Html.TextBoxFor(m => m.PhoneNumber, "", new { @class = "form-control", @placeholder = "Phone Number" })
+                        </div>
+
+
+                        <div class="userName icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            @* <input type="text" autofocus placeholder="Username" name="u.username"/> *@
+                            @Html.TextBoxFor(m => m.Username, "", new { @class = "form-control", @placeholder = "Username" })
+                        </div>
+
+                        <div class="userEmail icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            @* <input type="email" autofocus placeholder="mo@example.com" name="u.email"/> *@
+                            @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
+                        </div>
+
+                        <div class="userPassword icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            @* <input type="password" placeholder="Password" name="u.password"/> *@
+                            @Html.PasswordFor(m => m.Password , new { @class = "form-control", @placeholder = "Password" })
+                        </div>
+
+                        <div class="userPassword icon-text-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="ConfirmPassword" placeholder="Confirm Password"/>
+                            @* @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" }) *@
+                        </div>
+
+                        <div class="userGrade icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </span>
+                            <select name="level">
+                                <option value="" disabled selected>Choose your grade</option>
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                        </div>
+
+
+                        <div class="userName icon-text-wrapper">
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input class="form-control .birthdate" autofocus placeholder="BirthDate" name="birthDate" asp-for="BirthDate"/>
+                        </div>
+
+                    </div>
+                    <div class="register-sign-in-wrapper">
+                        <button class="" type="submit">Register</button>
+                        <div class="sign-in">
+                            <span>
+                                Already have an account?
+                                <span class="login">
+                                    <a href="Login" class="sign">Login</a>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            }
+
+        </div>
+        <div class="register-left">
+            <div>
+                <img src="assets/Images/background3.png" alt="background"/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

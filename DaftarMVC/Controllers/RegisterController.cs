@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using Azure.Identity;
 using DaftarMVC.Data;
-using DaftarMVC.Models.User;
+using DaftarMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using DaftarMVC.Controllers;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -21,7 +21,7 @@ public class RegisterController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        return View();
+        return View("Register");
     }
 
     // [HttpPost]
@@ -35,9 +35,9 @@ public class RegisterController : Controller
         // if (!ModelState.IsValid) return View();
         
         var check = _applicationDbContext.Users.FirstOrDefault(u => u.Email.Equals(_user.Email));
-        if (check != null) return View(); 
+        if (check != null) return View("Register"); 
         
-        if (_user.Password != confirmPassword) return View();
+        if (_user.Password != confirmPassword) return View("Register");
         _user.Password = AuthController.GetMD5(_user.Password);
         
         _applicationDbContext.Users.Add(_user);

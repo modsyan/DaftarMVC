@@ -1,0 +1,166 @@
+.contant
+{
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+.search-box ::placeholder
+{
+    color: #000;
+}
+.search-box :focus::placeholder
+{
+    color: #186B7A;
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #186B7A;
+    padding: 0 15px 0 45px;
+    color: #fff;
+    border-radius: 6px;
+}
+.filters-menu
+{
+    width: 20rem;
+    height: 25rem;
+    background-color: #186B7A;  
+}
+.filters-menu h3
+{
+    text-align: center;
+    color: white;
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    transition: 500ms;
+    border-radius: 8px;
+}
+.list-items .item span
+{
+    color: white;
+}
+.list-items .item:hover{
+    background-color: #0e3b43;
+}
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+.container .images .card-box{
+
+    height: 31rem;
+    width: 19rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images .card-box{
+    margin: 8px;
+}
+.images .card-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+.card-content.image{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 3px;
+}
+.card-content .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card-content .name-profession{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2px;
+    color: #323334;
+} 
+  .name-profession .name{
+    font-size: 20px;
+    font-weight: 600;
+}
+.name-profession .profession{
+    font-size: 10px;
+    font-weight: 500;
+}
+.card-content .rating{
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+  }
+.card-content .rating i{
+    font-size: 18px;
+    margin: 0 2px;
+    color: #186B7A;
+}
+.card-content .button-teacher {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.card-content .button-teacher button{
+    background: #186B7A;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.button-teacher button:hover {
+    background: #0e3b43;
+}

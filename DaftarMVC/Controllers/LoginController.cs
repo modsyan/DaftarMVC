@@ -1,5 +1,5 @@
 using DaftarMVC.Data;
-using DaftarMVC.Models.User;
+using DaftarMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DaftarMVC.Controllers;
@@ -17,20 +17,20 @@ public class LoginController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        return View();
+        return View("Login");
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Index(string email, string password)
+    public IActionResult Index(string? email, string? password)
     {
-        if (email == null || password == null) return View();
+        if (email == null || password == null) return View("Login");
         var encryptedPassword = AuthController.GetMD5(password);
         var data = 
             _applicationDbContext.Users
             .Where(u => u.Email.Equals(email) && u.Password.Equals(encryptedPassword))
             .ToList();
-        if (!data.Any()) return View();
+        if (!data.Any()) return View("Login");
         
         HttpContext.Session.SetString("Full Name",
             data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName);

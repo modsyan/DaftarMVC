@@ -1,0 +1,59 @@
+:root 
+{
+    --background-color: #186B7A;
+    --background-Fbutton-color: #E9F7FA;
+    --background-Sbutton-color: #f9bc60;
+    --Ftxt-color: #001e1d;
+    --Stxt-color: #E9F7FA;
+    --btn-background-normal: #186b7a3f;
+    --hover-color: #f9bc60;
+    --randomColor-color: #e16162;
+}
+/* start section 1 */
+.container-first
+{
+    margin-top: 20px;
+    width: 70rem;
+    height: 35rem;
+    margin: 4rem auto;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 25px;
+}
+.container-first .card
+{
+    width: 250px;
+    height: 500px;
+    padding: 15px;
+    background-color: var(--background-Fbutton-color);
+    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 2px;
+    transition: all 0.3s ease 0s;
+    color: var(--Ftxt-color);
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.container-first .card:hover
+{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transform: scale(1.01);
+}
+.container-first .benfits
+{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.money
+{
+    transform: translateY(0px);
+}
+/* end section 1 */

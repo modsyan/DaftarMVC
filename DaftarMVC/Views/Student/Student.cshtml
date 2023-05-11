@@ -1,0 +1,409 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Student";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Css/test.css">
+    <link rel="stylesheet" href="~/Css/framework.css">
+    <title>Daftar</title>
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<body>
+    @Html.Partial("NavBar", Model)
+    <!-- section 1 -->
+    <section class="containerwallpaper">
+        <div class="contentwallpaper">
+            <div class="imageswallpaper">
+                <img class="imgs" src="~/Image/image1.png">
+                <img class="imgs" src="~/Image/image2.png">
+                <img class="imgs" src="~/Image/image3.png">
+                <img class="imgs" src="~/Image/test1.jpeg">
+                <img class="imgs" src="~/Image/background3.png">
+            </div>
+        </div>
+        <script>
+            var indexValue = 0;
+            function slideShow() {
+                setTimeout(slideShow, 2500);
+                var x;
+                const img = document.getElementsByClassName("imgs");
+                for (x = 0; x < img.length; x++) {
+                    img[x].style.display = "none";
+                }
+                indexValue++;
+                if (indexValue > img.length) { indexValue = 1 }
+                img[indexValue - 1].style.display = "block";
+            }
+            slideShow();
+        </script>
+    </section>
+    <!-- section 2 -->
+    <section class="container">
+        <div class="header-info">
+            <div class="text-up">
+                <h2>Top Rated</h2>
+            </div>
+            <a href="/Pages/Bundels"><button class="moatazbutton">Buy</button></a>
+        </div>
+        <div class="slider owl-carousel">
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        يعقوب قمر الدين دبيازة
+                    </div>
+                    <div class="sub-title">
+                        Graphic Designer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خالد كشميرى
+                    </div>
+                    <div class="sub-title">
+                        Web Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        2خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        3خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 3 -->
+    <section class="container">
+        <div class="header-info">
+            <div class="text-up">
+                <h2>Arabic teacher</h2>
+            </div>
+            <a href="/Pages/Bundels" class="teacher-btn btn"><button class="moatazbutton">Buy</button></a>
+        </div>
+        <div class="slider owl-carousel">
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        يعقوب قمر الدين دبيازة
+                    </div>
+                    <div class="sub-title">
+                        Graphic Designer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خالد كشميرى
+                    </div>
+                    <div class="sub-title">
+                        Web Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        2خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        3خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 4 -->
+    <section class="container">
+        <div class="header-info">
+            <div class="text-up">
+                <h2>English teacher</h2>
+            </div>
+            <a href="/Pages/Bundels" class="teacher-btn btn"><button class="moatazbutton">Buy</button></a>
+        </div>
+        <div class="slider owl-carousel">
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        يعقوب قمر الدين دبيازة
+                    </div>
+                    <div class="sub-title">
+                        Graphic Designer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خالد كشميرى
+                    </div>
+                    <div class="sub-title">
+                        Web Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        2خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <img src="~/Image/elearnig quts (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        3خضر كرواتيه
+                    </div>
+                    <div class="sub-title">
+                        App Developer
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                    </p>
+                    <div class="btn">
+                        <a href="/Pages/Bundels"><button class="button">Go With Teacher</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000, //2000ms = 2s;
+            autoplayHoverPause: true,
+        });
+    </script>
+    <!-- section 5 -->
+    <div class="text-up" style="display:flex;justify-content:center;align-content:center;margin-top:20px;">
+        <h2>To do</h2>
+    </div>
+    <section class="TO-DO-LIST">
+        <div class="wrapper">
+            <div class="task-input">
+                <input type="text" placeholder="Add a new task">
+            </div>
+            <div class="controls">
+                <div class="filters">
+                    <span class="active" id="all">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <ul class="task-box"></ul>
+        </div>
+    </section>
+    @Html.Partial("Footer")
+</body>
+<script src="~/JS/test.js"></script>
+</html>

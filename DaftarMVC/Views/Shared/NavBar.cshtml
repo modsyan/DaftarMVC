@@ -1,0 +1,37 @@
+﻿@model User
+@{
+    ViewBag.Title = "NavBar";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/Css/framework.css" />
+
+<nav>
+    <div class="logo">
+        <a href="/Intro-Page/intro.html">
+            <img src="~/Image/daftar.svg" alt="logo" />
+        </a>
+    </div>
+    <div class="nav_pages">
+        <ul class="nav_links">
+            <li class="link" id="here">
+                <a class="go" href="/Pages/User">Home</a>
+            </li>
+            <span style="color:white;">l</span>
+            <li class="link "><a class="go" href="/Pages/Bundels">Bundles</a></li>
+            <span style="color:white;">l</span>
+            <li class="link "><a class="go" href="/Pages/Teacher">Teacher</a></li>
+            <span style="color:white;">l</span>
+            <li class="link "><a class="go" href="/Pages/Chat">Chat</a></li>
+            <span style="color:white;">l</span>
+            <li class="link "><a class="go" href="/Pages/Student">My Profile</a></li>
+        </ul>
+    </div>
+    <div class="username">
+        <span>
+            <i class="fa-regular fa-user"></i>Hello,@Html.DisplayTextFor(m => m.Username)<label></label>
+        </span>
+        <a href="/Pages/Login"><button class="button">Log Out</button></a>
+    </div>
+</nav>
+

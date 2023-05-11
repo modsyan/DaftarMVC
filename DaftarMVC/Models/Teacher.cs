@@ -1,0 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DaftarMVC.Models;
+
+public class Teacher
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int TeacherId { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string Email { get; set; }
+    public string? PhoneNumber { get; set; }
+    public string? AvatarLink { get; set; }
+    public string? Major { get; set; }
+    public bool? IsActive { get; set;}
+}

@@ -1,0 +1,196 @@
+@model User;
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/87603dad33.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/user.css" />
+    @* <link rel="shortcut icon" href="/Images/icon1.jfif" /> *@
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <title>Daftar</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img src="assets/daftar.svg" alt="logo"/>
+        </a>
+      </div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="User" style="color: black">Home</a></li>
+          <li><a href="/">Bundles</a></li>
+          <li><a href="/">Teacher</a></li>
+        </ul>
+      </nav>
+      <div class="username">
+        <span><i class="fa-regular fa-user"></i>Hello, @HttpContextAccessor.HttpContext.Session.GetString("Full Name") </span>
+        <a href="/" class="Log_btn">
+          <button onclick="">Log Out</button>
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <div class="main_video_container">
+        <video
+          class="main_video"
+          loop
+          controls
+          src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+        ></video>
+        <h3 class="main_video_title">
+          كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+        </h3>
+      </div>
+
+      <div class="video_list_cointainer">
+        <div class="list active">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+        <div class="list">
+          <video
+            class="list_video"
+            loop
+            controls
+            src="/Images/كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية.mp4"
+          ></video>
+          <h3 class="list_title">
+            كيفية الاشتراك في عرض المراجعة النهائية _ اللغة العربية
+          </h3>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="logo-fotter">
+        <img src="/assests/daftar.svg" alt="logo" />
+      </div>
+      <div class="location">
+        <div>
+          <h1>Nasr City ,Cairo<br />Egypt</h1>
+        </div>
+        <div class="footer-email">
+          <a href="#"
+            ><i class="fa-regular fa-envelope"></i>contact@daftar.com</a
+          >
+        </div>
+        <div>(111) 111-1111</div>
+      </div>
+      <div class="links_one">
+        <ul class="links_one_items">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>&copy;2023 Daftar Platform. All rights reserved.</p>
+      </div>
+      <div class="links_two">
+        <ul class="links_two_items">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instgram</a></li>
+          <li><a href="#">Gmail</a></li>
+          <li><a href="#">Who we are?</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
