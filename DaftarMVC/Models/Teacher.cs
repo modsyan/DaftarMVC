@@ -7,12 +7,12 @@ public class Teacher
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int TeacherId { get; set; }
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
+    public int Teacher_Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
     public string Email { get; set; }
     public string? PhoneNumber { get; set; }
     public string? AvatarLink { get; set; }
-    public string? Major { get; set; }
+    public string Major { get; set; }
     public bool? IsActive { get; set;}
 }

@@ -17,10 +17,10 @@
           rel="stylesheet" />
     <script src="https://kit.fontawesome.com/87603dad33.js"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="font.css" />
-    <link rel="stylesheet" href="~/Css/test.css">
-    <link rel="stylesheet" href="~/Css/intro.css" />
-    <link rel="stylesheet" href="~/Css/framework.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/intro-mo.css" />
+    <link rel="stylesheet" href="css/framework.css" />
     <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
     <title>Daftar</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -29,8 +29,8 @@
 </head>
 
 <body>
-    @Html.Partial("Header")
-    <!-- text wel image -->
+@await Html.PartialAsync("Header")
+<!-- text wel image -->
     <section>
         <div class="about-container-second"><h2>Welcome In Our Platform</h2></div>
         <div class="container-first">
@@ -256,9 +256,9 @@
             });
         </script>
     </section>
-    @Html.Partial("Footer")
+@await Html.PartialAsync("Footer")
 </body>
-<script src="~/JS/test.js"></script>
+<script src="js/test.js"></script>
 </html>
 
 
