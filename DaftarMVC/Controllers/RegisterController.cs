@@ -30,17 +30,17 @@ public class RegisterController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Index(User _user, string confirmPassword)
+    public IActionResult Index(User user, string confirmPassword)
     {
         // if (!ModelState.IsValid) return View();
         
-        var check = _applicationDbContext.Users.FirstOrDefault(u => u.Email.Equals(_user.Email));
+        var check = _applicationDbContext.Users.FirstOrDefault(u => u.Email.Equals(user.Email));
         if (check != null) return View("Register"); 
         
-        if (_user.Password != confirmPassword) return View("Register");
-        _user.Password = AuthController.GetMD5(_user.Password);
+        if (user.Password != confirmPassword) return View("Register");
+        user.Password = AuthController.GetMD5(user.Password);
         
-        _applicationDbContext.Users.Add(_user);
+        _applicationDbContext.Users.Add(user);
         _applicationDbContext.SaveChanges();
         return RedirectToAction("Index", "User");
     }

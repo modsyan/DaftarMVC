@@ -17,5 +17,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Teacher> Teacher { get; set; }
+    public DbSet<Cart> Cart { get; set; }
 
 }

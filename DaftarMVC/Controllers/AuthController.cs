@@ -20,3 +20,11 @@ public class AuthController
         return byte2String;
     }    
 }
+//TODO
+// Auths Entire Application
+// DashBoard ADD REMOVE UPDATE TEACHERS AND USERS
+// COOKIES HANDLING
+// Handling DATABASES WITH TIME STAMPS
+// FAVORITE TEACHER BUTTON
+// Live chat from Wezzah
+// Intro From Wezzah

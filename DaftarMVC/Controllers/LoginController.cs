@@ -1,3 +1,4 @@
+using System.Text;
 using DaftarMVC.Data;
 using DaftarMVC.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -32,11 +33,14 @@ public class LoginController : Controller
             .ToList();
         if (!data.Any()) return View("Login");
         
-        HttpContext.Session.SetString("Full Name",
-            data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName);
-        HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
-        HttpContext.Session.SetInt32("idUser", data.FirstOrDefault().Id);
-        
+        Response.Cookies.Append("FirstName", data.FirstOrDefault().FirstName);
+        Response.Cookies.Append("LasName", data.FirstOrDefault().LastName);
+        Response.Cookies.Append("Email", data.FirstOrDefault().Email);
+        Response.Cookies.Append("Id", new StringBuilder().Append(data.FirstOrDefault().Id).ToString());
+        // HttpContext.Session.SetString("Full Name",
+        //     data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName);
+        // HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
+        // HttpContext.Session.SetInt32("idUser", data.FirstOrDefault().Id);
         return RedirectToAction("Index", "User");
     }
 }

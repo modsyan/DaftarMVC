@@ -1,62 +1,72 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="EntityFramework" Version="6.4.4" />
-      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.5" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Include="wwwroot\assets\banhawy.svg" />
-      <None Include="wwwroot\assets\basil.svg" />
-      <None Include="wwwroot\assets\daftar.svg" />
-      <None Include="wwwroot\assets\hamdy.svg" />
-      <None Include="wwwroot\assets\Images\background3.png" />
-      <None Include="wwwroot\assets\logo.svg" />
-      <None Include="wwwroot\assets\moataz.svg" />
-      <None Include="wwwroot\assets\reem.svg" />
-      <None Remove="Views\Pages\**" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\banhawy.svg" />
+    <None Include="wwwroot\assets\basil.svg" />
+    <None Include="wwwroot\assets\daftar.svg" />
+    <None Include="wwwroot\assets\hamdy.svg" />
+    <None Include="wwwroot\assets\Images\background3.png" />
+    <None Include="wwwroot\assets\logo.svg" />
+    <None Include="wwwroot\assets\moataz.svg" />
+    <None Include="wwwroot\assets\reem.svg" />
+    <None Remove="Views\Pages\**" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Migrations\" />
-      <Folder Include="Pages\" />
-    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="Views\Pages\**" />
-    </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Pages\**" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <EmbeddedResource Remove="Views\Pages\**" />
-    </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Pages\**" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <Content Remove="Views\Pages\**" />
-      <Content Remove="Views\User\UserSetState.cshtml" />
-    </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Pages\**" />
+    <Content Remove="Views\User\UserSetState.cshtml" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\Pages\Chat.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Into.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Loading.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Login.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Register.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Student.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\Teacher.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Pages\User.cshtml" />
-    </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Pages\Chat.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Into.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Loading.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Login.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Register.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Student.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\Teacher.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Pages\User.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Cart\Cart.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Cart\index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Cart\test.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Cart\index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Views\Home\About.cshtml" />
+    <AdditionalFiles Include="Views\Home\Contact.cshtml" />
+  </ItemGroup>
 
 </Project>

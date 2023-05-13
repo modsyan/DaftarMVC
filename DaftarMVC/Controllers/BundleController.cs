@@ -17,7 +17,7 @@ public class BundleController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        return View("Bundels");
+        return View();
     }
     
     

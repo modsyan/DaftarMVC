@@ -1,6 +1,7 @@
 ﻿@model User
 @{
     ViewBag.Title = "Chat";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Css/Chat.css">
+    <link rel="stylesheet" href="css/Chat.css">
     <script src="https://kit.fontawesome.com/87603dad33.js"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -17,7 +18,7 @@
 </head>
 @Html.Partial("NavBar", Model)
 <body>
-    <div class="chat-container">
+    <div class="chat-container" style="padding: 200px">
         <div class="wrapper">
             <div class="title">Chat</div>
             <div class="form">

@@ -1,0 +1,60 @@
+@* @model System.Security.Claims.ClaimsPrincipal *@
+@model User
+
+@{
+    ViewBag.Title = "ToDo";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/framework.css" />
+    <link rel="stylesheet" href="css/toDo.css" />
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>Daftar</title>
+</head>
+
+<body>
+
+@await Html.PartialAsync("NavBar", Model)
+
+<div class="text-up" style="display:flex;justify-content:center;align-content:center;margin-top:3rem;">
+        <h2>Todo</h2>
+    </div>
+    <section class="TO-DO-LIST">
+        <div class="wrapper">
+            <div class="task-input">
+                <input type="text" placeholder="Add a new task">
+            </div>
+            <div class="controls">
+                <div class="filters">
+                    <span class="active" id="all">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <ul class="task-box"></ul>
+        </div>
+    </section>
+
+@await Html.PartialAsync("Footer")
+
+</body>
+<script src="jS/test.js"></script>
+
+</html>
+
+

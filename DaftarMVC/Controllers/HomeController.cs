@@ -18,10 +18,6 @@ public class HomeController : Controller
         return View("Home");
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
@@ -29,6 +25,20 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
+    public IActionResult Contact()
+    {
+        return View("Contact");
+    }
+
+    public IActionResult AboutUs()
+    {
+        return View("About");
+    }
+
+    public IActionResult Privacy()
+    {
+        return View("Privacy");
+    }
     public IActionResult Intro()
     {
         return View("Into");

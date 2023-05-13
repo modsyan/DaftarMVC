@@ -15,4 +15,5 @@ public class Teacher
     public string? AvatarLink { get; set; }
     public string Major { get; set; }
     public bool? IsActive { get; set;}
+    public double MonthlyPrice { get; set; }
 }

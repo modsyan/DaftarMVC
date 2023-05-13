@@ -23,8 +23,8 @@ public class PaymentController : Controller
     [HttpPost]
     public IActionResult Index(Payment payment)
     {
-        var CurUserId = Request.Cookies["UserId"].Split('=')[1];
-        if (CurUserId == null)
+        var curUserId = Request.Cookies["UserId"]?.Split('=')[1];
+        if (curUserId is null)
         {
             return RedirectToAction("Index", "Login");
         }
@@ -37,7 +37,7 @@ public class PaymentController : Controller
             return View("FaildTransaction");
         }
 
-        payment.user_id = int.Parse(CurUserId);
+        payment.user_id = int.Parse(curUserId);
 
         _applicationDbContext.Payments.Add(payment);
         _applicationDbContext.SaveChanges();
