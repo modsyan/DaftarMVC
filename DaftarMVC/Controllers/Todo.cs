@@ -16,7 +16,7 @@ public class Todo : Controller
         public ActionResult Index()
         {
             var userId = Request.Cookies["UserId"]?.Split('=')[1];
-            if(userId is null) return RedirectToAction("Index", "Login");
+            if(userId is null) return RedirectToAction("Login", "Account");
             
             var user = _applicationDbContext.Users.FirstOrDefault(a => a.Id.Equals(userId));
             return View(user);

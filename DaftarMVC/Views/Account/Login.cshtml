@@ -37,7 +37,7 @@
             <div class="inputs">
                 <h2>Login</h2>
                 
-                @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
                 {
                 <div class="userName">
                     <span>
@@ -54,10 +54,10 @@
                 </div>
                 <div class="links">
                     <div class="checkbox">
-                        <input id="rem" value="Remeber me" type="checkbox"/>
-                        <label for="rem" class="re">Remeber me</label>
+                        <input id="rem" value="Remember Me" type="checkbox"/>
+                        <label for="rem" class="re">Remember Me</label>
                     </div>
-                    <a href="Login">
+                    <a href="/Login">
                         <span class="forget">Forget Password?</span>
                     </a>
                 </div>
@@ -66,7 +66,7 @@
                             Log in
                         </button>
                         <div class="signup">
-                            <a href="Register">
+                            <a href="/Register">
                                 <span>
                                     Not Regesited?
                                     <span class="sgin">

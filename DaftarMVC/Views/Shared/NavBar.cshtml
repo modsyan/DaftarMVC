@@ -10,23 +10,23 @@
 <link rel="stylesheet" href="css/framework.css" />
 <nav>
     <div class="logo">
-        <a href="/Intro-Page/intro.html">
+        <a href="/">
             <img src="~/Image/daftar.svg" alt="logo" />
         </a>
     </div>
     <div class="nav_pages">
         <ul class="nav_links">
             <li class="link" id="here">
-                <a class="go" href="/Pages/User">Home</a>
+                <a class="go" href="/">Home</a>
             </li>
             <span style="color:white;">l</span>
-            <li class="link "><a class="go" href="/Pages/Bundels">Bundles</a></li>
+            <li class="link "><a class="go" href="/Bundles">Bundles</a></li>
             <span style="color:white;">l</span>
-            <li class="link "><a class="go" href="/Pages/Teacher">Teacher</a></li>
+            <li class="link "><a class="go" href="/Teacher">Teacher</a></li>
             <span style="color:white;">l</span>
-            <li class="link "><a class="go" href="/Pages/Chat">Chat</a></li>
+            <li class="link "><a class="go" href="/Chat">Chat</a></li>
             <span style="color:white;">l</span>
-            <li class="link "><a class="go" href="/Pages/Student">My Profile</a></li>
+            <li class="link "><a class="go" href="/Student">My Profile</a></li>
         </ul>
     </div>
     <div class="username">
@@ -34,7 +34,7 @@
             <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
             @* <i class="fa-regular fa-user"></i>Hello, @(new HttpContextAccessor().HttpContext.Request.Cookies["Full Name"])<label></label> *@
         </span>
-        <a asp-action="Logout" asp-controller="Login"><button class="button">Log Out</button></a>
+        <a href="/logout"><button class="button">Log Out</button></a>
     </div>
 </nav>
 

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,6 +15,8 @@ public class Teacher
     public string? PhoneNumber { get; set; }
     public string? AvatarLink { get; set; }
     public string Major { get; set; }
-    public bool? IsActive { get; set;}
+    
+    [DefaultValue("true")]
+    public bool IsActive { get; set;}
     public double MonthlyPrice { get; set; }
 }

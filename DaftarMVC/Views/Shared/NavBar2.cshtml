@@ -33,7 +33,8 @@
         @if (fullName is null)
         {
             <button class="navbar-item nav-btn primary-btn">
-                <a asp-action="Index" asp-controller="Register" style="color: black;">Join Us</a>
+                @* <a asp-action="Register" asp-controller="Account" style="color: black;">Join Us</a> *@
+                <a href="/register" style="color: black;">Join Us</a>
             </button>
         }
         else
@@ -42,7 +43,7 @@
                 <span>
                     <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
                 </span>
-                <a asp-action="Logout" asp-controller="Login">
+                <a href="/logout">
                     <button class="button">Log Out</button>
                 </a>
             </div>

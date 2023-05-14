@@ -1,35 +1,36 @@
 using System.Text;
-using DaftarMVC.Data;
-using DaftarMVC.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
+using DaftarMVC.Data;
+using DaftarMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace DaftarMVC.Controllers;
 
-public class LoginController : Controller
+public class AccountController : Controller
 {
     private ApplicationDbContext _applicationDbContext;
 
-    public LoginController(ApplicationDbContext applicationDbContext)
+    public AccountController(ApplicationDbContext applicationDbContext)
     {
         _applicationDbContext = applicationDbContext;
     }
 
-    // GET
+    [Route("/Login")]
     [HttpGet]
-    public IActionResult Index()
+    public IActionResult Login()
     {
         return View("Login");
     }
 
+    [Route("/Login")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Index(string? email, string? password)
+    public IActionResult Logout(string? email, string? password)
     {
         if (email is null || password is null) return View("Login");
-        
+
         var encryptedPassword = AuthController.GetMD5(password);
         var user =
             _applicationDbContext.Users
@@ -37,17 +38,6 @@ public class LoginController : Controller
                 .ToList().FirstOrDefault();
         if (user is null) return View("Login");
 
-        // using Cookies
-        // Response.Cookies.Append("FirstName", data.FirstName);
-        // Response.Cookies.Append("LasName", data.LastName);
-        // Response.Cookies.Append("FullName", string.Concat(data.FirstName, " ", data.LastName));
-        // Response.Cookies.Append("Email", data.Email);
-        // Response.Cookies.Append("Id", new StringBuilder().Append(data.Id).ToString());
-        // Response.Cookies.Append("UserImage", data.Avatar_link);
-        // Response.Cookies.Append("PhoneNumber", data.PhoneNumber);
-
-        // using Sessions
-        
         HttpContext.Session.SetInt32("UserId", user.Id);
         HttpContext.Session.SetString("FullName", user.FirstName + " " + user.LastName);
         HttpContext.Session.SetString("Email", user.Email);
@@ -59,12 +49,34 @@ public class LoginController : Controller
         return RedirectToAction("Index", "User");
     }
 
+    [Route("/Logout")]
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
         HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
         return RedirectToAction("Index", "Home");
     }
 
+    [Route("/Register")]
+    [HttpGet]
+    public IActionResult Register()
+    {
+        return HttpContext.Session.GetString("id") is null ? View("Register") : RedirectToAction("Index", "home");
+    }
+
+    [Route("/Register")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Register(User user, string confirmPassword)
+    {
+        var check = _applicationDbContext.Users.FirstOrDefault(u => u.Email.Equals(user.Email));
+        if (check != null) return View("Register");
+
+        if (user.Password != confirmPassword) return View("Register");
+        user.Password = AuthController.GetMD5(user.Password);
+
+        _applicationDbContext.Users.Add(user);
+        _applicationDbContext.SaveChanges();
+        return RedirectToAction("Index", "User");
+    }
 }

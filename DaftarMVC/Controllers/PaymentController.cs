@@ -26,7 +26,7 @@ public class PaymentController : Controller
         var curUserId = Request.Cookies["UserId"]?.Split('=')[1];
         if (curUserId is null)
         {
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Login", "Account");
         }
 
         var isValidCard = payment.CardNumber == null || payment.CardHolderName == null || payment.CardNumber == null ||

@@ -64,7 +64,19 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "logout",
     pattern: "logout",
-    defaults: new {controller = "Login", action = "Logout"}
+    defaults: new {controller = "Account", action = "Logout"}
+);
+
+app.MapControllerRoute(
+    name: "login",
+    pattern: "login",
+    defaults: new {controller = "Account", action = "login"}
+);
+
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "Register",
+    defaults: new {controller = "Account", action = "Register"}
 );
 
 app.Run();
