@@ -11,5 +11,4 @@ public class Favorite
     public int Id { get; set; }
     public int UserId { get; set;}
     public int TeacherId {get; set;  }
-    public int TeacherLikedId { get; set;}
 }

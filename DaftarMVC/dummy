@@ -1,0 +1,29 @@
+<tr>
+        <td><label asp-for="" class="fw-bold">UserID:</label></td>
+        <td><label asp-for="@Model.Id"></label> @Model.Id</td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="FirstName" class="fw-bold">FirstName:</label></td>
+        <td><label asp-for="@Model.FirstName"></label> @Model.FirstName</td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="LastName" class="fw-bold">LastName:</label></td>
+        <td><label asp-for="@Model.LastName"></label> @Model.LastName</td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="Email" class="fw-bold">Email:</label></td>
+        <td><label asp-for="@Model.Email"></label> @Model.Email</td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="Avatar_link" class="fw-bold">AvatarLink:</label></td>
+        <td><label asp-for="@Model.Avatar_link"></label> @Model.Avatar_link</td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="Level" class="fw-bold">Level: </label></td>
+        <td><label asp-for="@Model.Level"></label> @Model.Level</td>
+    </tr>

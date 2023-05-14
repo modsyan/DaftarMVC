@@ -3,9 +3,15 @@
     // Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4"> Teacher Management </h1>
+<div class="text-center ">
+    <h1 class="display-4 "> Teacher Management </h1>
 </div>
+
+<a href="/DashBoard/CreateTeacher" class="right">
+    <button class="btn-secondary" style="width:160px; height:50px  ">
+        Create Teacher
+    </button>
+</a>
 
 <div class="container">
     <div style="padding: 50px; margin: 50px;" class="row gap-5">
@@ -21,7 +27,7 @@
                         <span class="row-cols-2">@item.PhoneNumber </span><span class="row-cols-1">@item.MonthlyPrice</span>
                     </p>
                     <div class="row p-3 flex-row gap-3">
-                        <a href="/DashBoard/EditTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Edit Teacher</a>
+                        <a href="/DashBoard/UpdateTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Edit Teacher</a>
                         <a href="/DashBoard/RemoveTeacher/@item.Teacher_Id" class="btn btn-secondary col-sm">Remove Teacher</a>
                     </div>
                 </div>

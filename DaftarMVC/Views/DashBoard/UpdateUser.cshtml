@@ -1,0 +1,48 @@
+@model User
+
+@using (Html.BeginForm("UpdateUser", "DashBoard", FormMethod.Post)){
+
+<div class="col p-5 m-5 gap-2 flex-column">
+
+    <div class="row">
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">First Name: </i>
+        </span>
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "col-auto", @placeholder = "First Name" })
+    </div>
+    <div class="row">
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">Last Name: </i>
+        </span>
+        @Html.TextBoxFor(m => m.LastName, new { @class = "col-auto", @placeholder = "Last Name" })
+    </div>
+    <div class="row">
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">Phone Number: </i>
+        </span>
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "col-auto", @placeholder = "Phone Number" })
+    </div>
+    <div class="row">
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">Email: </i>
+        </span>
+        @Html.TextBoxFor(m => m.Email, new { @class = "col-auto", @placeholder = "Email" })
+    </div>
+    <div class="row-cols-auto">
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">Avatar Link: </i>
+        </span>
+        @Html.TextBoxFor(m => m.Avatar_link, new { @class = "col-auto", @placeholder = "AvatarLink" })
+    </div>
+    <div class="row" >
+        <span class="col-auto">
+            <i class="fa-solid fa-lock">Level: </i>
+        </span>
+        @Html.TextBoxFor(m => m.Level, new { @class = "col-auto", @placeholder = "Major" })
+    </div>
+
+    <div style="justify-content: center; align-items: center">
+        <button type="submit" class="btn-primary">Update</button>
+    </div>
+</div>
+}

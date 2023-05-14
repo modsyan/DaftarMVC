@@ -1,6 +1,8 @@
 @model Teacher
 
 
+@using (Html.BeginForm("UpdateTeacher", "DashBoard", FormMethod.Post)){
+
 <div class="col p-5 m-5 gap-2 flex-column">
     <div class="row">
         <span class="col-auto">
@@ -56,4 +58,9 @@
         </span>
         @Html.TextBoxFor(m => m.MonthlyPrice, new { @class = "col-auto", @placeholder = "Monthly Price" })
     </div>
+    <div style="justify-content: center; align-items: center">
+        <button type="submit" class="btn-primary">Update Teacher</button>
+        <button class="btn-danger"><a href="/DashBoard/RemoveTeacher/@Model.Teacher_Id">Remove Teacher </a></button>
+    </div>
 </div>
+}
