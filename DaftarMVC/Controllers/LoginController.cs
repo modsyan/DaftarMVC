@@ -25,22 +25,33 @@ public class LoginController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Index(string? email, string? password)
     {
-        if (email == null || password == null) return View("Login");
+        if (email is null || password is null) return View("Login");
         var encryptedPassword = AuthController.GetMD5(password);
-        var data = 
+        var user =
             _applicationDbContext.Users
-            .Where(u => u.Email.Equals(email) && u.Password.Equals(encryptedPassword))
-            .ToList();
-        if (!data.Any()) return View("Login");
+                .Where(u => u.Email.Equals(email) && u.Password.Equals(encryptedPassword))
+                .ToList().FirstOrDefault();
+        if (user is null) return View("Login");
+
+        // using Cookies
+        // Response.Cookies.Append("FirstName", data.FirstName);
+        // Response.Cookies.Append("LasName", data.LastName);
+        // Response.Cookies.Append("FullName", string.Concat(data.FirstName, " ", data.LastName));
+        // Response.Cookies.Append("Email", data.Email);
+        // Response.Cookies.Append("Id", new StringBuilder().Append(data.Id).ToString());
+        // Response.Cookies.Append("UserImage", data.Avatar_link);
+        // Response.Cookies.Append("PhoneNumber", data.PhoneNumber);
+
+        // using Sessions
         
-        Response.Cookies.Append("FirstName", data.FirstOrDefault().FirstName);
-        Response.Cookies.Append("LasName", data.FirstOrDefault().LastName);
-        Response.Cookies.Append("Email", data.FirstOrDefault().Email);
-        Response.Cookies.Append("Id", new StringBuilder().Append(data.FirstOrDefault().Id).ToString());
-        // HttpContext.Session.SetString("Full Name",
-        //     data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName);
-        // HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
-        // HttpContext.Session.SetInt32("idUser", data.FirstOrDefault().Id);
+        HttpContext.Session.SetInt32("UserId", user.Id);
+        HttpContext.Session.SetString("FullName", user.FirstName + " " + user.LastName);
+        HttpContext.Session.SetString("Email", user.Email);
+        if (user.Avatar_link is not null)
+            HttpContext.Session.SetString("UserImage", user.Avatar_link);
+        if (user.PhoneNumber is not null)
+            HttpContext.Session.SetString("PhoneNumber", user.PhoneNumber);
+
         return RedirectToAction("Index", "User");
     }
 }

@@ -1,8 +1,11 @@
-﻿@model User
-@* @{ *@
-@*     ViewBag.Title = "NavBar"; *@
-@*     Layout = null; *@
-@* } *@
+﻿@* @inject Microsoft.AspNetCore.Http.HttpContextAccessor NewContext *@
+
+@{
+    ViewBag.Title = "NavBar";
+    Layout = null;
+    // var cookieValue = NewContext.HttpContext?.Request.Cookies["FullName"];
+    var fullName = Context.Session.GetString("FullName");
+}
 
 <link rel="stylesheet" href="css/framework.css" />
 <nav>
@@ -28,7 +31,8 @@
     </div>
     <div class="username">
         <span>
-            <i class="fa-regular fa-user"></i>Hello,@Html.DisplayTextFor(m => m.Username)<label></label>
+            <i class="fa-regular fa-user"></i>Hello, @fullName)<label></label>
+            @* <i class="fa-regular fa-user"></i>Hello, @(new HttpContextAccessor().HttpContext.Request.Cookies["Full Name"])<label></label> *@
         </span>
         <a href="/Pages/Login"><button class="button">Log Out</button></a>
     </div>

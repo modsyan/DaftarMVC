@@ -1,8 +1,10 @@
 ﻿@model User
+@inject Microsoft.AspNetCore.Http.HttpContextAccessor context
 
 @{
     ViewBag.Title = "Home";
     Layout = null;
+    var cookieValue = context.HttpContext?.Request.Cookies["FullName"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@
 </head>
 <body>
 
-    @Html.Partial("NavBar", Model)
+    @Html.Partial("NavBar")
     <section>
         <div class="main_video_container">
             <video class="main_video"

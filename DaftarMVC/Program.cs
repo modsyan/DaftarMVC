@@ -1,4 +1,5 @@
 using DaftarMVC.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -21,6 +22,8 @@ builder.Services.AddSession(option =>
     option.Cookie.IsEssential = true;
 });
 
+
+
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
@@ -33,6 +36,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+// builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+// {
+//     option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+//     option.SlidingExpiration = true;
+//     // option.AccessDeniedPath = "/DashBoard/";
+// });
+// app.UseAuthentication();
+// app.UseAuthorization();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -41,6 +54,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseSession();
+
+
 
 app.MapControllerRoute(
     name: "default",
