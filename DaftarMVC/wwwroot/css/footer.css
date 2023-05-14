@@ -1,0 +1,36 @@
+*{
+    text-decoration: none;
+}
+a{
+    color:azure;
+    text-decoration: none;
+}
+footer{
+    background: #1e2125;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    color: azure;
+}
+footer .location{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .links_one{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+footer .links_one_items{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+footer .links_two_items{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
