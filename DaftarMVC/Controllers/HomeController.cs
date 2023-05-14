@@ -39,13 +39,14 @@ public class HomeController : Controller
     {
         return View("Privacy");
     }
-    public IActionResult Intro()
+
+    public IActionResult OldMid()
     {
-        return View("Into");
+        return View("OldMid");
     }
 
-    public IActionResult New()
+    public IActionResult Old()
     {
-        return View("NewHome");
+        return View("Old");
     }
 }

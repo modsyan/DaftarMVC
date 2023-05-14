@@ -1,6 +1,9 @@
 using System.Text;
 using DaftarMVC.Data;
 using DaftarMVC.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DaftarMVC.Controllers;
@@ -26,6 +29,7 @@ public class LoginController : Controller
     public IActionResult Index(string? email, string? password)
     {
         if (email is null || password is null) return View("Login");
+        
         var encryptedPassword = AuthController.GetMD5(password);
         var user =
             _applicationDbContext.Users
@@ -54,4 +58,13 @@ public class LoginController : Controller
 
         return RedirectToAction("Index", "User");
     }
+
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+        return RedirectToAction("Index", "Home");
+    }
+
 }

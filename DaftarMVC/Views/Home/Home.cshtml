@@ -1,186 +1,48 @@
-@model DaftarMVC.Models.User;
-
+﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Into";
+    Layout = null;    
 }
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @* <link rel="stylesheet" href="~/css/font.css" /> *@
+    @* <link rel="stylesheet" href="~/css/test.css"> *@
+    @* <link rel="stylesheet" href="~/css/intro-mo.css"/> *@
+    @* <link rel="stylesheet" href="~/css/framework.css" /> *@
+    <link rel="stylesheet" href="~/css/navbar.css"/>
+    <link rel="stylesheet" href="~/css/header.css"/>
+    <link rel="stylesheet" href="~/css/platformIntroSection.css"/>
+    <link rel="stylesheet" href="~/css/about-developers.css"/>
+    <link rel="stylesheet" href="~/css/footer.css"/>
+    @* <link rel="stylesheet" href="~/css/Reviews.css"/> *@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/87603dad33.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/font.css" />
-    <link rel="stylesheet" href="css/intro.css" />
-    <link rel="shortcut icon" href="/Images/icon1.jfif" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <title>Welcome!</title>
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
 
-  <body>
-    <header>
-      <nav>
-        <div class="logo">
-          <a href="/">
-            <img src="assets/daftar.svg" alt="logo"/>
-          </a>
-        </div>
-        <ul class="nav_links">
-          <li>
-            <a href="/" style="color: black">Welcome</a>
-          </li>
-          <li>
-            <a href="/">Bundles</a>
-          </li>
-          <li>
-            <a href="/">Teacher</a>
-          </li>
-        </ul>
-        <a href="Register" class="Join_btn"
-          ><button>Join US</button></a
-        >
-      </nav>
-      <div class="text-img">
-        <div class="text-header">
-          <h1>Find the Best Teachers & Learn</h1>
-        </div>
-        <div class="headerlogo">
-          <img src="assets/logo.svg" alt="a" />
-        </div>
-      </div>
-    </header>
-    <!-- text wel image -->
-    <section>
-      <div class="container-first">
-        <div class="text-img">
-          <div class="left">
-            <div class="text">
-              <h2>
-                “Technology will not replace great-teachers but technology in
-                the hands of great teachers can be transformational”
-              </h2>
-            </div>
-          </div>
-          <div class="right"></div>
-        </div>
-      </div>
-    </section>
-    <!-- text wel image -->
-    <section>
-      <div class="container-second">
-        <div class="about-container-second"><h2>About Platform</h2></div>
-        <div class="txt-about-container-second">
-          <p>
-            <span>Daftar</span> is e-learning website is a platform that
-            provides an online learning experience to students or learners of
-            various age groups. E-learning websites use digital technology to
-            deliver educational content, including videos, quizzes, assignments,
-            and other interactive resources that enable learners to acquire
-            knowledge and skills
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container-third">
-        <h2>About Us</h2>
-        <div class="box">
-          
-          <div class="card">
-            <h2>hamdy</h2>
-            <p>FullStack Dev</p>
-            <span>Leader</span>
-            <div class="pic"><img src="assets/hamdy.svg" alt="hamdy"/></div>
-            <button></button>
-          </div>
-          
-          <div class="card card2">
-            <h2>benho</h2>
-            <p>FullStack Dev</p>
-            <span>member</span>
-            <div class="pic">
-              <img src="assets/banhawy.svg" alt="banhawy"/>
-            </div>
-            <button></button>
-          </div>
-          
-          <div class="card card3">
-            <h2>basol</h2>
-            <p>FullStack Dev</p>
-            <span>member</span>
-            <div class="pic"><img src="assets/basil.svg" alt="basol"/></div>
-            <button></button>
-          </div>
-          
-          <div class="card card4">
-            <h2>reem</h2>
-            <p>FullStack Dev</p>
-            <span>member</span>
-            <div class="pic"><img src="assets/reem.svg" alt="reem"/></div>
-            <button></button>
-          </div>
-          
-          <div class="card card4">
-            <h2>moataz</h2>
-            <p>FullStack Dev</p>
-            <span>member</span>
-            <div class="pic"><img src="assets/moataz.svg" alt="motaz"/></div>
-            <button></button>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-    
-    <footer>
-      <div class="logo-fotter">
-        <div class="icon-daftar">
-          <img src="assets/daftar.svg" alt="logo" />
-        </div>
-      </div>
-      <div class="location">
-        <div>
-          <h1>Nasr City ,Cairo<br />Egypt</h1>
-        </div>
-        <div class="footer-email">
-          <a href="#"
-            ><i class="fa-regular fa-envelope"></i>contact@daftar.com</a
-          >
-        </div>
-        <div>(111) 111-1111</div>
-      </div>
-      <div class="links_one">
-        <ul class="links_one_items">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Developers</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Partners</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-        <p>&copy;2023 Daftar Platform. All rights reserved.</p>
-      </div>
-      <div class="links_two">
-        <ul class="links_two_items">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Instgram</a></li>
-          <li><a href="#">Gmail</a></li>
-          <li><a href="#">Who we are?</a></li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <title>Daftar</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+
+<body>
+    @await Html.PartialAsync("NavBar2")
+    @await Html.PartialAsync("HomeHeader")
+    @await Html.PartialAsync("PlatformIntroSection")
+    @await Html.PartialAsync("AboutDevelopersSection")
+    @await Html.PartialAsync("Footer")
+</body>
+@* <script src="js/test.js"></script> *@
 </html>
+
+

@@ -1,10 +1,8 @@
 ﻿@model User
-@inject Microsoft.AspNetCore.Http.HttpContextAccessor context
 
 @{
     ViewBag.Title = "Home";
     Layout = null;
-    var cookieValue = context.HttpContext?.Request.Cookies["FullName"];
 }
 <!DOCTYPE html>
 <html lang="en">

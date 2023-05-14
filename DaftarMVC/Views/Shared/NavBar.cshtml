@@ -31,10 +31,10 @@
     </div>
     <div class="username">
         <span>
-            <i class="fa-regular fa-user"></i>Hello, @fullName)<label></label>
+            <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
             @* <i class="fa-regular fa-user"></i>Hello, @(new HttpContextAccessor().HttpContext.Request.Cookies["Full Name"])<label></label> *@
         </span>
-        <a href="/Pages/Login"><button class="button">Log Out</button></a>
+        <a asp-action="Logout" asp-controller="Login"><button class="button">Log Out</button></a>
     </div>
 </nav>
 

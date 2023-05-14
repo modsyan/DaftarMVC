@@ -1,25 +1,51 @@
-
+@{
+    var fullName = Context.Session.GetString("FullName");
+}
 
 <nav class="navbar">
     <div class="logo">
-        <a href="/Intro-Page/intro.html">
-            <img src="~/Image/daftar.svg" alt="logo" />
+        <a href="/">
+            <img src="~/Image/daftar.svg" alt="logo"/>
         </a>
     </div>
-   <div class="nav-links-container">
-                  <ul class="nav-links">
-                      <a href="#"><li class="nav-link-item">About</li></a>
-                      <span class="separator">|</span>
-                      <a href="#"><li class="nav-link-item">Bundles</li></a>
-                      <span class="separator">|</span>
-                      <a href="#"><li class="nav-link-item">Teachers</li></a>
-                      <span class="separator">|</span>
-                      <a href="#"><li class="nav-link-item">Chat</li></a>
-                      <span class="separator">|</span>
-                      <a href="#"><li class="nav-link-item">My Profile</li></a>
-                  </ul>
-       <button class="navbar-item nav-btn primary-btn">Join Us</button>
-       </div> 
+    <div class="nav-links-container">
+        <ul class="nav-links">
+            <a href="#">
+                <li class="nav-link-item">About</li>
+            </a>
+            <span class="separator">|</span>
+            <a href="#">
+                <li class="nav-link-item">Bundles</li>
+            </a>
+            <span class="separator">|</span>
+            <a href="#">
+                <li class="nav-link-item">Teachers</li>
+            </a>
+            <span class="separator">|</span>
+            <a href="#">
+                <li class="nav-link-item">Chat</li>
+            </a>
+            <span class="separator">|</span>
+            <a href="#">
+                <li class="nav-link-item">My Profile</li>
+            </a>
+        </ul>
+        @if (fullName is null)
+        {
+            <button class="navbar-item nav-btn primary-btn">
+                <a asp-action="Index" asp-controller="Register" style="color: black;">Join Us</a>
+            </button>
+        }
+        else
+        {
+            <div class="username">
+                <span>
+                    <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
+                </span>
+                <a asp-action="Logout" asp-controller="Login">
+                    <button class="button">Log Out</button>
+                </a>
+            </div>
+        }
+    </div>
 </nav>
-
-

@@ -16,7 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(option =>
 {
-    option.IdleTimeout = TimeSpan.FromSeconds(1);
+    option.IdleTimeout = TimeSpan.FromMinutes(10);
     option.Cookie.Name = ".UserAuth.Session";
     option.Cookie.HttpOnly = true;
     option.Cookie.IsEssential = true;
@@ -49,16 +49,22 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
-
 app.UseAuthorization();
 
 app.UseSession();
 
+// Application Routes
 
+app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "logout",
+    pattern: "logout",
+    defaults: new {controller = "Login", action = "Logout"}
+);
 
 app.Run();
