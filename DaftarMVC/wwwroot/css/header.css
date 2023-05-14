@@ -23,7 +23,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    height: 400px;
+    height: 90vh;
     gap: 32px;
 }
 .header-text{

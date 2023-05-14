@@ -14,7 +14,7 @@ a{
 }
 
 nav{
-    padding: 10px 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +54,7 @@ nav{
     transition: all ease-in-out 200ms;
     min-width: 90px;
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .nav-link-item:hover{

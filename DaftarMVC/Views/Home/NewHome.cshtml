@@ -17,6 +17,7 @@
     @* <link rel="stylesheet" href="~/css/framework.css" /> *@
     <link rel="stylesheet" href="~/css/navbar.css"/>
     <link rel="stylesheet" href="~/css/header.css"/>
+    <link rel="stylesheet" href="~/css/platformIntroSection.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
@@ -32,226 +33,191 @@
 </head>
 
 <body>
-@await Html.PartialAsync("NavBar2")
-@await Html.PartialAsync("HomeHeader")
-<!-- text wel image -->
-    <section>
-        <div class="about-container-second"><h2>Welcome In Our Platform</h2></div>
-        <div class="container-first">
-            <div class="text-img">
-                <div class="left">
-                    <div class="text">
-                        <h2>
-                            “Technology will not replace great-teachers but technology in
-                            the hands of great teachers can be transformational”
-                        </h2>
-                    </div>
-                </div>
-                <div class="right"></div>
-            </div>
-        </div>
-    </section>
-    <!-- text wel image -->
-    <section>
-        <div class="about-container-second"><h2>About Platform</h2></div>
-        <div class="container-second">
-            <div class="text-img">
-                <div class="txt-about-container-second">
-                    <p>
-                        <span>Daftar</span> is e-learning website is a platform that
-                        provides an online learning experience to students or learners of
-                        various age groups. E-learning websites use digital technology to
-                        deliver educational content, including videos, quizzes, assignments,
-                        and other interactive resources that enable learners to acquire
-                        knowledge and skills
-                    </p>
-                </div>
-                <div class="right"></div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container-third">
-            <h2>About Us</h2>
-            <div class="box">
-                <!-- hamdy -->
-                <div class="card">
-                    <h2>hamdy</h2>
-                    <p>FullStack Dev</p>
-                    <span>Leader</span>
-                    <div class="pic"><img src="~/Image/hamdy.svg" alt="hamdy" /></div>
-                    <a href="https://www.linkedin.com/in/modsyan/"><button></button></a>
-                </div>
-                <!-- hamdy -->
-                <!-- benho -->
-                <div class="card card2">
-                    <h2>Benho</h2>
-                    <p>FullStack Dev</p>
-                    <span>member</span>
-                    <div class="pic">
-                        <img src="~/Image/banhawy.svg" alt="banhawy" />
-                    </div>
-                    <a href="https://www.linkedin.com/in/muhammad-banhawy" ><button></button></a>
-                </div>
-                <!-- benho -->
-                <!-- basol -->
-                <div class="card card3">
-                    <h2>Basil</h2>
-                    <p>FullStack Dev</p>
-                    <span>member</span>
-                    <div class="pic"><img src="~/Image/basil.svg" alt="basol" /></div>
-                    <a href="https://www.linkedin.com/in/bassil-haroun-204829216"><button></button></a>
-                </div>
-                <!-- basol -->
-                <!-- reem -->
-                <div class="card card4">
-                    <h2>reem</h2>
-                    <p>FullStack Dev</p>
-                    <span>member</span>
-                    <div class="pic"><img src="~/Image/reem.svg" alt="reem" /></div>
-                    <a href="https://www.linkedin.com/in/reem-aliraqi-7ab32b262"><button></button></a>
-                </div>
-                <!-- reem -->
-                <!-- moataz -->
-                <div class="card card4">
-                    <h2>moataz</h2>
-                    <p>FullStack Dev</p>
-                    <span>member</span>
-                    <div class="pic"><img src="~/Image/moataz.svg" alt="motaz" /></div>
-                    <a href="https://www.linkedin.com/in/motaz-essam-070782223/"><button></button></a>
-                </div>
-                <!-- moataz -->
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="header-info">
-            <div class="text-up">
-                <h2>reviews</h2>
-            </div>
-            <a href="/Pages/Bundels"><button class="moatazbutton">Join Us</button></a>
-        </div>
-        <div class="slider owl-carousel">
-
-            <div style="text-align:center;" class="card">
-                <div class="img" style="width: 20px; height: 20px;">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                </div>
-                <div class="content" style="text-align:center;">
-                    <div class="title">
-                        يعقوب قمر الدين دبيازة
-                    </div>
-                    <div class="sub-title">
-                        Grade one
-                    </div>
-                    <p style="text-align:center;">
-                        Best Platform
-                    </p>
-                    <div class="btn" style="text-align:right;">
-                        <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
-                    </div>
-                </div>
-            </div>
-
+    @await Html.PartialAsync("NavBar2")
+    @await Html.PartialAsync("HomeHeader")
+@await Html.PartialAsync("PlatformIntroSection")
+<section>
+    <div class="container-third">
+        <h2>About Us</h2>
+        <div class="box">
+            <!-- hamdy -->
             <div class="card">
-                <div class="img" style="width:20px;height:20px;">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="title">
-                        خالد كشميرى
-                    </div>
-                    <div class="sub-title">
-                        Grade One
-                    </div>
-                    <p style="text-align:center;">
-                        Best Platform
-                    </p>
-                    <div class="btn" style="text-align:right;">
-                        <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
-                    </div>
-                </div>
+                <h2>hamdy</h2>
+                <p>FullStack Dev</p>
+                <span>Leader</span>
+                <div class="pic"><img src="~/Image/hamdy.svg" alt="hamdy"/></div>
+                <a href="https://www.linkedin.com/in/modsyan/"><button></button></a>
             </div>
-
-            <div class="card">
-                <div class="img" style="width:20px;height:20px;">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
+            <!-- hamdy -->
+            <!-- benho -->
+            <div class="card card2">
+                <h2>Benho</h2>
+                <p>FullStack Dev</p>
+                <span>member</span>
+                <div class="pic">
+                    <img src="~/Image/banhawy.svg" alt="banhawy"/>
                 </div>
-                <div class="content">
-                    <div class="title">
-                        خضر كرواتيه
-                    </div>
-                    <div class="sub-title">
-                        Grade three
-                    </div>
-                    <p style="text-align:center;">
-                        Best Platform
-                    </p>
-                    <div class="btn" style="text-align:right;">
-                        <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/in/muhammad-banhawy"><button></button></a>
             </div>
-
-            <div class="card">
-                <div class="img" style="width:20px;height:20px;">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="title">
-                        2خضر كرواتيه
-                    </div>
-                    <div class="sub-title">
-                        Grade 1
-                    </div>
-                    <p style="text-align:center;">
-                        Best Platform
-                    </p>
-                    <div class="btn" style="text-align:right;">
-                        <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
-                    </div>
-                </div>
+            <!-- benho -->
+            <!-- basol -->
+            <div class="card card3">
+                <h2>Basil</h2>
+                <p>FullStack Dev</p>
+                <span>member</span>
+                <div class="pic"><img src="~/Image/basil.svg" alt="basol"/></div>
+                <a href="https://www.linkedin.com/in/bassil-haroun-204829216"><button></button></a>
             </div>
+            <!-- basol -->
+            <!-- reem -->
+            <div class="card card4">
+                <h2>reem</h2>
+                <p>FullStack Dev</p>
+                <span>member</span>
+                <div class="pic"><img src="~/Image/reem.svg" alt="reem"/></div>
+                <a href="https://www.linkedin.com/in/reem-aliraqi-7ab32b262"><button></button></a>
+            </div>
+            <!-- reem -->
+            <!-- moataz -->
+            <div class="card card4">
+                <h2>moataz</h2>
+                <p>FullStack Dev</p>
+                <span>member</span>
+                <div class="pic"><img src="~/Image/moataz.svg" alt="motaz"/></div>
+                <a href="https://www.linkedin.com/in/motaz-essam-070782223/"><button></button></a>
+            </div>
+            <!-- moataz -->
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="header-info">
+        <div class="text-up">
+            <h2>reviews</h2>
+        </div>
+        <a href="/Pages/Bundels"><button class="moatazbutton">Join Us</button></a>
+    </div>
+    <div class="slider owl-carousel">
 
-            <div class="card">
-                <div class="img" style="width:20px;height:20px;">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
-                    <img src="~/Image/star icon.png" alt="">
+        <div style="text-align:center;" class="card">
+            <div class="img" style="width: 20px; height: 20px;">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+            </div>
+            <div class="content" style="text-align:center;">
+                <div class="title">
+                    يعقوب قمر الدين دبيازة
                 </div>
-                <div class="content">
-                    <div class="title">
-                        3خضر كرواتيه
-                    </div>
-                    <div class="sub-title">
-                        Grade two
-                    </div>
-                     <p style="text-align:center;">
-                        Best Platform
-                    </p>
-                    <div class="btn" style="text-align:right;">
-                        <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
-                    </div>
+                <div class="sub-title">
+                    Grade one
+                </div>
+                <p style="text-align:center;">
+                    Best Platform
+                </p>
+                <div class="btn" style="text-align:right;">
+                    <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
                 </div>
             </div>
         </div>
-        <script>
+
+        <div class="card">
+            <div class="img" style="width:20px;height:20px;">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    خالد كشميرى
+                </div>
+                <div class="sub-title">
+                    Grade One
+                </div>
+                <p style="text-align:center;">
+                    Best Platform
+                </p>
+                <div class="btn" style="text-align:right;">
+                    <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img" style="width:20px;height:20px;">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    خضر كرواتيه
+                </div>
+                <div class="sub-title">
+                    Grade three
+                </div>
+                <p style="text-align:center;">
+                    Best Platform
+                </p>
+                <div class="btn" style="text-align:right;">
+                    <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img" style="width:20px;height:20px;">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    2خضر كرواتيه
+                </div>
+                <div class="sub-title">
+                    Grade 1
+                </div>
+                <p style="text-align:center;">
+                    Best Platform
+                </p>
+                <div class="btn" style="text-align:right;">
+                    <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img" style="width:20px;height:20px;">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+                <img src="~/Image/star icon.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    3خضر كرواتيه
+                </div>
+                <div class="sub-title">
+                    Grade two
+                </div>
+                <p style="text-align:center;">
+                    Best Platform
+                </p>
+                <div class="btn" style="text-align:right;">
+                    <a href="/Pages/Bundels"><button class="button">Join Us</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
             $(".slider").owlCarousel({
                 loop: true,
                 autoplay: true,
@@ -259,7 +225,7 @@
                 autoplayHoverPause: true,
             });
         </script>
-    </section>
+</section>
 @await Html.PartialAsync("Footer")
 </body>
 <script src="js/test.js"></script>

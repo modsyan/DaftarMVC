@@ -1,0 +1,38 @@
+.intro-section{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin-top: 4px;
+    gap: 20px;
+}
+.intro-section .text-wrapper{
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    background: #0e3b43;
+    border-radius: 8px;
+    height: 100%;
+}
+.intro-section .image-wrapper{
+    width: 100%;
+    height: 100%;
+    background: url("../Image/daftar-into-pic.jpg") no-repeat;
+    background-size: cover ;
+}
+.intro-section .titles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: x-large;
+}
+.para{
+    color: lightgray;
+    font-size:large;
+}
