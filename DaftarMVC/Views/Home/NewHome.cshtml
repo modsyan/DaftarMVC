@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="~/css/navbar.css"/>
     <link rel="stylesheet" href="~/css/header.css"/>
     <link rel="stylesheet" href="~/css/platformIntroSection.css"/>
+    <link rel="stylesheet" href="~/css/about-developers.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
@@ -35,62 +36,8 @@
 <body>
     @await Html.PartialAsync("NavBar2")
     @await Html.PartialAsync("HomeHeader")
-@await Html.PartialAsync("PlatformIntroSection")
-<section>
-    <div class="container-third">
-        <h2>About Us</h2>
-        <div class="box">
-            <!-- hamdy -->
-            <div class="card">
-                <h2>hamdy</h2>
-                <p>FullStack Dev</p>
-                <span>Leader</span>
-                <div class="pic"><img src="~/Image/hamdy.svg" alt="hamdy"/></div>
-                <a href="https://www.linkedin.com/in/modsyan/"><button></button></a>
-            </div>
-            <!-- hamdy -->
-            <!-- benho -->
-            <div class="card card2">
-                <h2>Benho</h2>
-                <p>FullStack Dev</p>
-                <span>member</span>
-                <div class="pic">
-                    <img src="~/Image/banhawy.svg" alt="banhawy"/>
-                </div>
-                <a href="https://www.linkedin.com/in/muhammad-banhawy"><button></button></a>
-            </div>
-            <!-- benho -->
-            <!-- basol -->
-            <div class="card card3">
-                <h2>Basil</h2>
-                <p>FullStack Dev</p>
-                <span>member</span>
-                <div class="pic"><img src="~/Image/basil.svg" alt="basol"/></div>
-                <a href="https://www.linkedin.com/in/bassil-haroun-204829216"><button></button></a>
-            </div>
-            <!-- basol -->
-            <!-- reem -->
-            <div class="card card4">
-                <h2>reem</h2>
-                <p>FullStack Dev</p>
-                <span>member</span>
-                <div class="pic"><img src="~/Image/reem.svg" alt="reem"/></div>
-                <a href="https://www.linkedin.com/in/reem-aliraqi-7ab32b262"><button></button></a>
-            </div>
-            <!-- reem -->
-            <!-- moataz -->
-            <div class="card card4">
-                <h2>moataz</h2>
-                <p>FullStack Dev</p>
-                <span>member</span>
-                <div class="pic"><img src="~/Image/moataz.svg" alt="motaz"/></div>
-                <a href="https://www.linkedin.com/in/motaz-essam-070782223/"><button></button></a>
-            </div>
-            <!-- moataz -->
-        </div>
-    </div>
-</section>
-<section class="container">
+    @await Html.PartialAsync("PlatformIntroSection")
+    @await Html.PartialAsync("AboutDevelopersSection")
     <div class="header-info">
         <div class="text-up">
             <h2>reviews</h2>
@@ -225,7 +172,6 @@
                 autoplayHoverPause: true,
             });
         </script>
-</section>
 @await Html.PartialAsync("Footer")
 </body>
 <script src="js/test.js"></script>
