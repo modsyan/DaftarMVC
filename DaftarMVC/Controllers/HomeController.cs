@@ -43,4 +43,9 @@ public class HomeController : Controller
     {
         return View("Into");
     }
+
+    public IActionResult New()
+    {
+        return View("NewHome");
+    }
 }
