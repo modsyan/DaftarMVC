@@ -7,15 +7,15 @@ public class FavoriteController : Controller
 {
     public IActionResult Index()
     {
-        
+        return View();
     }
 
     public IActionResult AddTeacher()
     {
-        
+        return View("Index");
     }
-    public IActionResult Remove Teacher()
+    public IActionResult RemoveTeacher()
     {
-        
+        return View("Index");
     }
 }
