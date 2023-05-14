@@ -30,7 +30,7 @@
 @foreach (var item in Model)
 {
     <div>
-        <img src="@Url.Content(@item.AvatarLink)" width="200" height="200"/>
+        <img src="@Url.Content(item.AvatarLink)" width="200" height="200"/>
         <h2>@String.Concat(item.FirstName + " " + item.LastName)</h2>
         <h2>Monthally Subscription @item.MonthlyPrice</h2>
         <button type="submit" >

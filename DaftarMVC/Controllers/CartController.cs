@@ -24,7 +24,7 @@ public class CartController : Controller
     {
         Cart order = new Cart()
         {
-            imgae = teacher.AvatarLink,
+            image = teacher.AvatarLink,
             price = teacher.MonthlyPrice,
             name = string.Concat(teacher.FirstName + " " + teacher.LastName)
         };

@@ -1,0 +1,18 @@
+@model Teacher
+
+@{
+    Layout = null;
+}
+
+<div class="input-group">
+    <input  name="Teacher ID" type="text"  class="input-data" value="@Model.Teacher_Id">
+    @Html.TextBoxFor(m=> m.FirstName, new {@readonly = "readonly"})
+      <input  name="Fi" type="text"  class="input-data" value="@Model.FirstName">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.LastName">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.PhoneNumber">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.Email">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.AvatarLink">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.Major">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.IsActive">
+      <input  name="FirstName" type="text"  class="input-data" value="@Model.MonthlyPrice">
+</div>

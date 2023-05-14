@@ -1,9 +1,18 @@
+using DaftarMVC.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DaftarMVC.Controllers;
 
 public class DashBoardController : Controller
 {
+    
+    private ApplicationDbContext _applicationDbContext;
+
+    public DashBoardController(ApplicationDbContext applicationDbContext)
+    {
+        _applicationDbContext = applicationDbContext;
+    }
+    
     // GET
     public IActionResult Index()
     {
@@ -15,17 +24,30 @@ public class DashBoardController : Controller
         return View("Users");
     }
     
-    public IActionResult Teachers()
+    public IActionResult Teacher()
     {
-        return View("Teachers");
+        var allTeacher = _applicationDbContext.Teacher.ToList();
+        return allTeacher == null ? View("Error") : View("Teacher", allTeacher);
+    }
+
+    public IActionResult EditTeacher(int id)
+    {
+        var teacher = _applicationDbContext.Teacher.FirstOrDefault(t => t.Teacher_Id.Equals(id));
+        return View("EditTeacher", teacher);
     }
     
+    // public IActionResult RemoveTeacher()
+    // {
+    //     
+    // }
+
+
     public IActionResult Statistics()
     {
         return View("Statistics");
     }
     
-    public IActionResult Chats()
+    public IActionResult Chat()
     {
         return View("Chats");
     }

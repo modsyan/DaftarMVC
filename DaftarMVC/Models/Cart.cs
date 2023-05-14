@@ -10,6 +10,6 @@ public class Cart
     public int id { get; set; }
     public string name{ get; set; }
     public double price{ get; set; }
-    public string imgae{ get; set; }
+    public string? image{ get; set; }
      
 }
