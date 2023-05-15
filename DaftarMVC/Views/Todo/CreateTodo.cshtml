@@ -1,0 +1,43 @@
+@model Todo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/framework.css"/>
+    <title>title</title>
+</head>
+<body>
+<section class="vh-100" style="background-color: #e2d5de;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-5">
+                        <h6 class="mb-3">Create New Task</h6>
+                        @using (Html.BeginForm("Create", "Todo", FormMethod.Post))
+                        {
+                            <div class="d-flex justify-content-center align-items-center mb-4 row">
+                                <div class="form-outline flex-fill col">
+                                    @* <input type="text" id="form3" class="" placeholder="Write Here Your Task" name="@Model.Description"/> *@
+                                    @Html.TextBoxFor(m => m.Description , new { @class = "form-control form-control-lg", @placeholder = "Write Here Your Task Today !?" })
+                                    @* <label class="form-label" for="form3">What do you need to do today?</label> *@
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg ms-2 col">Add</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -83,9 +83,11 @@ public class DashBoardController : Controller
     [HttpPost]
     public IActionResult CreateUser(User user)
     {
+        const string defaultPassword = "root";
+        user.Password = AuthController.GetMD5(defaultPassword);
         _applicationDbContext.Users.Add(user);
         _applicationDbContext.SaveChanges();
-        return View("Users");
+        return RedirectToAction("Users", "DashBoard");
     }
     
     [HttpGet]

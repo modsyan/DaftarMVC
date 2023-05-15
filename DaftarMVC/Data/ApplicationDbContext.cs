@@ -18,5 +18,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Teacher> Teacher { get; set; }
     public DbSet<Cart> Cart { get; set; }
+    public DbSet<Todo> Todo { get; set; }
 
 }

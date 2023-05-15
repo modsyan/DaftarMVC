@@ -2,7 +2,11 @@
 
 <div class="text-center ">
     <h1 class="display-4 "> Users Management </h1>
+    <a href="/dashboard/CreateUser">
+        <button>CreateUser</button>
+    </a>
 </div>
+
 <div class="row">
     <div class="col-12">
         <table class="table table-sm table-striped table-hover border-bottom">
@@ -41,6 +45,11 @@
                             @Html.DisplayFor(e => item.PhoneNumber)
                         </td>
 
+                        
+                        <td class="d-none d-lg-table-cell">
+                            @Html.DisplayFor(e => item.Avatar_link)
+                        </td>
+                        
                         <td class="d-none d-lg-table-cell">
                             @Html.DisplayFor(e => item.Level)
                         </td>

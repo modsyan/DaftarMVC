@@ -1,5 +1,5 @@
 @* @model System.Security.Claims.ClaimsPrincipal *@
-@model User
+@model List<Todo>
 
 @{
     ViewBag.Title = "ToDo";
@@ -7,54 +7,68 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
-          rel="stylesheet" />
+          rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/87603dad33.js"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/framework.css" />
-    <link rel="stylesheet" href="css/toDo.css" />
-    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    @* <link rel="stylesheet" href="css/framework.css"/> *@
+    <link rel="stylesheet" href="~/css/navbar.css"/>
+    @* <link rel="stylesheet" href="css/todo.css"/> *@
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg"/>
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <title>Daftar</title>
 </head>
 
 <body>
 
-@await Html.PartialAsync("NavBar", Model)
+ @await Html.PartialAsync("NavBar2") 
 
-<div class="text-up" style="display:flex;justify-content:center;align-content:center;margin-top:3rem;">
-        <h2>Todo</h2>
-    </div>
-    <section class="TO-DO-LIST">
-        <div class="wrapper">
-            <div class="task-input">
-                <input type="text" placeholder="Add a new task">
-            </div>
-            <div class="controls">
-                <div class="filters">
-                    <span class="active" id="all">All</span>
-                    <span id="pending">Pending</span>
-                    <span id="completed">Completed</span>
-                </div>
-                <button class="clear-btn">Clear All</button>
-            </div>
-            <ul class="task-box"></ul>
-        </div>
-    </section>
+<section class="vh-100" style="background-color: #e2d5de;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
 
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-5">
+
+                        <div class="col center">
+                            <h4 class="mb-3 row justify-content-center">Todo List</h4>
+                            <a href="/todo/create" class="row">
+                                <button class="btn-primary p-2 m-2" >Add Task</button>
+                            </a>
+                        </div>
+
+                        @foreach (var item in Model)
+                        {
+                            <ul class="list-group mb-0">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-check-input me-2" asp-route="/todo/toggleDone/@item.Id" type="checkbox" value="@item.Status" aria-label="..."/>
+                                        @item.Description
+                                    </div>
+                                    <a href="/todo/Remove/@item.Id" data-mdb-toggle="tooltip" title="Remove item">
+                                        <i class="fas fa-times text-primary"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        }
+                    </div >
+                </div >
+            </div >
+        </div >
+    </div >
+</section >
 @await Html.PartialAsync("Footer")
-
-</body>
-<script src="jS/test.js"></script>
-
-</html>
-
-
+</body >
+<script src="jS/test.js"></script >
+</html >
