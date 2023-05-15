@@ -47,7 +47,7 @@ nav{
     cursor: pointer;
 }
 
-.nav-link-item-native{
+.nav-link-item{
     color: azure;
     padding: 0.7rem;
     border-radius: 6px;
