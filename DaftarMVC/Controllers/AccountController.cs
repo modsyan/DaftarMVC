@@ -46,7 +46,7 @@ public class AccountController : Controller
         if (user.PhoneNumber is not null)
             HttpContext.Session.SetString("PhoneNumber", user.PhoneNumber);
 
-        return RedirectToAction("Index", "User");
+        return RedirectToAction("Index", "Home");
     }
 
     [Route("/Logout")]

@@ -1,0 +1,195 @@
+﻿@model User
+@{
+    ViewBag.Title = "Chat";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87603dad33.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/user-new-chat.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg" />
+    <title>Daftar</title>
+</head>
+<body>
+@await Html.PartialAsync("NavBar2")
+<div class="page-name">
+        <h1>Home</h1>
+    </div>
+    <section>
+        <div class="main_video_container">
+            <video class="main_video"
+                   loop
+                   controls
+                   src=""></video>
+        </div>
+        <div class="video_list_cointainer">
+            <div class="list active" id="~/Image/vd1zero.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd1zero.mp4"></video>
+                <h3 class="list_title">
+                    Reda faroq
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd3Asmar.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd3Asmar.mp4"></video>
+                <h3 class="list_title">
+                    Memes 1
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd2reda.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd2reda.mp4"></video>
+                <h3 class="list_title">
+                    Elzero
+                </h3>
+            </div>
+            <div class="list" id="~/Image/vd4memes.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd4memes.mp4"></video>
+                <h3 class="list_title">
+                    Memes 2
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd3Asmar.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd3Asmar.mp4"></video>
+                <h3 class="list_title">
+                    Memes 3
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd2reda.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd2reda.mp4"></video>
+                <h3 class="list_title">
+                    Elzero
+                </h3>
+            </div>
+            <div class="list" id="~/Image/vd1zero.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd1zero.mp4"></video>
+                <h3 class="list_title">
+                    reda faroq
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd3Asmar.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd3Asmar.mp4"></video>
+                <h3 class="list_title">
+                    Memes 4
+                </h3>
+            </div>
+
+            <div class="list" id="~/Image/vd2reda.mp4">
+                <video class="list_video"
+                       loop
+                       controls
+                       src="~/Image/vd2reda.mp4"></video>
+                <h3 class="list_title">
+                    Elzero
+                </h3>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="popup-box">
+        <div class="popup">
+            <div class="content">
+                <header>
+                    <p></p>
+                    <i class="uil uil-times"></i>
+                </header>
+                <form action="#">
+                    <div class="row title">
+                        <label>Title</label>
+                        <input type="text" spellcheck="false">
+                    </div>
+                    <div class="row description">
+                        <label>Description</label>
+                        <textarea spellcheck="false"></textarea>
+                    </div>
+                    <button></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <li class="add-box">
+            <div class="icon"></div>
+            <p>Add new note</p>
+        </li>
+    </div>
+    @Html.PartialAsync("Footer");
+</body>
+<script>
+        $(document).ready(function () {
+            function Send() {
+                $value = $("#data").val();
+                if ($value != "") {
+                    $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
+                    $(".form").append($msg);
+                    $("#data").val('');
+                    var form = document.querySelector(".form");
+                    form.scroll(0, 1000);
+                }
+            
+            }
+            $("#send-btn").on("click", function () {
+                $value = $("#data").val();
+                $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
+                if ($value ==  1) {
+                    $bot = '<div class="bot-inbox inbox"><div class="icon" ><i class="fas fa-user"></i></div ><div class="msg-header"><p>01143333265 </p></div></div> ';
+        }
+                else if ($value == 2) {
+                    $bot = '<div class="bot-inbox inbox"><div class="icon" ><i class="fas fa-user"></i></div ><div class="msg-header"><p><a href="mailto: abc@example.com" >Daftar.com</a> </p></div></div> ';
+                }
+                else if ($value == 3) {
+                    $bot = '<div class="bot-inbox inbox"><div class="icon" ><i class="fas fa-user"></i></div ><div class="msg-header"><p>with teacher basil start 11pm </p></div></div> ';
+                }
+                else{
+                    $bot = '<div class="bot-inbox inbox"><div class="icon" ><i class="fas fa-user"></i></div ><div class="msg-header"><p>press 1 to get phone number <br />press 3 to get sessions times <br />press 2 to get Email </p></div></div> ';
+                }
+                $(".form").append($msg);
+                $(".form").append($bot);
+                $("#data").val('');
+                var form = document.querySelector(".form");
+                form.scroll(0, 1000);
+            });
+        });
+    </script>
+</html>
+

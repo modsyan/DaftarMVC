@@ -18,6 +18,12 @@ public class ChatController : Controller
         return View("Chat");
     }
     
+    [Route("/video")]
+    public IActionResult Viedo()
+    {
+        return View("video");
+    }
+    
     // [HttpPost]
     // public ActionResult Chat()
     // {

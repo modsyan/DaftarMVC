@@ -10,24 +10,24 @@
     </div>
     <div class="nav-links-container">
         <ul class="nav-links">
-            <a href="#">
+            <a href="/">
                 <li class="nav-link-item">About</li>
             </a>
             <span class="separator">|</span>
-            <a href="#">
+            <a href="/bundle">
                 <li class="nav-link-item">Bundles</li>
             </a>
             <span class="separator">|</span>
-            <a href="#">
+            <a asp-action="Index" asp-controller="Teachers">
                 <li class="nav-link-item">Teachers</li>
             </a>
             <span class="separator">|</span>
-            <a href="#">
+            <a href="/chat">
                 <li class="nav-link-item">Chat</li>
             </a>
             <span class="separator">|</span>
-            <a href="#">
-                <li class="nav-link-item">My Profile</li>
+            <a href="/video">
+                <li class="nav-link-item">Video</li>
             </a>
         </ul>
         @if (fullName is null)

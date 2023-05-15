@@ -22,9 +22,10 @@ public class FavoriteController : Controller
             return RedirectToAction("logout", "Account");
         var favorites = _applicationDbContext.Favorites.Where(e => e.UserId.Equals(user.Id)).ToList();
         var teachers= new List<Teacher>();
-        foreach (var teacher in favorites.Select(item => _applicationDbContext.Teacher.FirstOrDefault(e=> e.Teacher_Id.Equals(item.TeacherId))))
+        foreach (var item in favorites)
         {
-            teachers?.Append(teacher);
+            var teacher = _applicationDbContext.Teacher.FirstOrDefault(e=> e.Teacher_Id.Equals(item.TeacherId));
+            if (teacher != null) teachers.Append(teacher);
         }
         return View("Index", teachers);
     }
