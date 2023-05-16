@@ -1,0 +1,162 @@
+@{
+    var fullName = Context.Session.GetString("FullName");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>@ViewData["Title"] - Daftar E-Learning Platfrom</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/navbar.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+
+    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg"/>
+
+    <script src="https://kit.fontawesome.com/87603dad33.js"crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="Image/daftar.svg" alt="logo"/>
+            </a>
+        </div>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+
+                <li class="nav-link-item">
+                    <a href="/">About </a>
+                </li>
+
+                <span class="separator">|</span>
+
+                <li class="nav-link-item">
+                    <a href="/bundle">Bundles</a>
+                </li>
+
+                <span class="separator">|</span>
+
+                <li class="nav-link-item">
+                    <a asp-action="Index" asp-controller="Teachers">Teachers</a>
+                </li>
+
+                <span class="separator">|</span>
+
+                <li class="nav-link-item">
+                    <a href="/chat">Chat</a>
+                </li>
+
+                <span class="separator">|</span>
+
+                <li class="nav-link-item">
+                    <a href="/video">Video</a>
+                </li>
+                
+            </ul>
+            @if (fullName is null)
+            {
+                <button class="navbar-item nav-btn primary-btn">
+                    @* <a asp-action="Register" asp-controller="Account" style="color: black;">Join Us</a> *@
+                    <a href="/register" style="color: black;">Join Us</a>
+                </button>
+            }
+            else
+            {
+                <div class="username">
+                    <span>
+                        <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
+                    </span>
+                    <a href="/logout">
+                        <button class="button">Log Out</button>
+                    </a>
+                </div>
+            }
+        </div>
+    </nav>
+
+</header>
+
+<div role="main" class="" style="">
+    <main>
+        @RenderBody()
+    </main>
+</div>
+
+
+<footer>
+    <div class="logo-footer">
+        <div class="icon-daftar">
+            <img src="Image/daftar.svg" alt="logo"/>
+        </div>
+    </div>
+    <div class="location">
+        <div>
+            <h1>Nasr City ,Cairo<br/>Egypt</h1>
+        </div>
+        <div class="footer-email">
+            <a href="#"><i class="fa-regular fa-envelope"></i>contact@daftar.com</a>
+        </div>
+        <div>(111) 111-1111</div>
+    </div>
+    <div class="links_one">
+        <ul class="links_one_items">
+            <li>
+                <a href="/Pages/Loading">About</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Developers</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Courses</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Partners</a>
+            </li>
+        </ul>
+        <p>&copy;2023 Daftar Platform. All rights reserved.</p>
+    </div>
+    <div class="links_two">
+        <ul class="links_two_items">
+            <li>
+                <a href="/Pages/Loading">Facebook</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Twitter</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Instgram</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Gmail</a>
+            </li>
+            <li>
+                <a href="/Pages/Loading">Who we are?</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

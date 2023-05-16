@@ -1,10 +1,11 @@
 using DaftarMVC.Data;
 using DaftarMVC.Models;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DaftarMVC.Controllers;
 
-public class FavoriteController : Controller
+public sealed class FavoriteController : Controller
 {
     
     private ApplicationDbContext _applicationDbContext;

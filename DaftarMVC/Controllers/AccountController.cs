@@ -31,7 +31,7 @@ public class AccountController : Controller
     {
         if (email is null || password is null) return View("Login");
 
-        var encryptedPassword = AuthController.GetMD5(password);
+        var encryptedPassword = AuthController.GetMd5(password);
         var user =
             _applicationDbContext.Users
                 .Where(u => u.Email.Equals(email) && u.Password.Equals(encryptedPassword))
@@ -73,7 +73,7 @@ public class AccountController : Controller
         if (check != null) return View("Register");
 
         if (user.Password != confirmPassword) return View("Register");
-        user.Password = AuthController.GetMD5(user.Password);
+        user.Password = AuthController.GetMd5(user.Password);
 
         _applicationDbContext.Users.Add(user);
         _applicationDbContext.SaveChanges();

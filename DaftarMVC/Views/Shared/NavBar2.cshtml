@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/navbar.css"/>
+
 @{
     var fullName = Context.Session.GetString("FullName");
 }
@@ -11,23 +13,33 @@
     <div class="nav-links-container">
         <ul class="nav-links">
             <a href="/">
-                <li class="nav-link-item">About</li>
+                <li class="nav-link-item">
+                    About
+                </li>
             </a>
             <span class="separator">|</span>
             <a href="/bundle">
-                <li class="nav-link-item">Bundles</li>
+                <li class="nav-link-item">
+                    Bundles
+                </li>
             </a>
             <span class="separator">|</span>
             <a asp-action="Index" asp-controller="Teachers">
-                <li class="nav-link-item">Teachers</li>
+                <li class="nav-link-item">
+                    Teachers
+                </li>
             </a>
             <span class="separator">|</span>
             <a href="/chat">
-                <li class="nav-link-item">Chat</li>
+                <li class="nav-link-item">
+                    Chat
+                </li>
             </a>
             <span class="separator">|</span>
             <a href="/video">
-                <li class="nav-link-item">Video</li>
+                <li class="nav-link-item">
+                    Video
+                </li>
             </a>
         </ul>
         @if (fullName is null)

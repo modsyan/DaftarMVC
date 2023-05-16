@@ -84,7 +84,7 @@ public class DashBoardController : Controller
     public IActionResult CreateUser(User user)
     {
         const string defaultPassword = "root";
-        user.Password = AuthController.GetMD5(defaultPassword);
+        user.Password = AuthController.GetMd5(defaultPassword);
         _applicationDbContext.Users.Add(user);
         _applicationDbContext.SaveChanges();
         return RedirectToAction("Users", "DashBoard");

@@ -23,7 +23,6 @@ builder.Services.AddSession(option =>
 });
 
 
-
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
@@ -57,26 +56,40 @@ app.UseSession();
 
 app.UseRouting();
 
+
+app.MapControllerRoute(
+    name: "Home",
+    pattern: "Home",
+    defaults: new {controller = "Home", action = "Index"}
+);
+
+app.MapControllerRoute(
+    name: "layout",
+    pattern: "layout",
+    defaults: new {controller = "Home", action = "HomeWithLayout"}
+);
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.MapControllerRoute(
     name: "logout",
     pattern: "logout",
-    defaults: new {controller = "Account", action = "Logout"}
+    defaults: new { controller = "Account", action = "Logout" }
 );
 
 app.MapControllerRoute(
     name: "login",
     pattern: "login",
-    defaults: new {controller = "Account", action = "login"}
+    defaults: new { controller = "Account", action = "login" }
 );
 
 app.MapControllerRoute(
     name: "Register",
     pattern: "Register",
-    defaults: new {controller = "Account", action = "Register"}
+    defaults: new { controller = "Account", action = "Register" }
 );
 
 app.Run();
