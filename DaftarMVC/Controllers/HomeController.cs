@@ -49,11 +49,6 @@ public class HomeController : Controller
         return View("Old");
     }
 
-    public IActionResult HomeWithLayout()
-    {
-        return View("HomeWithLayout");
-    }
-    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
