@@ -1,5 +1,5 @@
 @{
-    var fullName = Context.Session.GetString("FullName");
+    var fullName = Context.Session.GetString("FirstName");
 }
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/navbar.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
 
     <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg"/>
@@ -68,26 +68,37 @@
                 <li class="nav-link-item">
                     <a href="/video">Video</a>
                 </li>
-                
+
+
+                @if (fullName is null)
+                {
+                    <div style="margin-left: 30px">
+                        <a href="/Login" style="color: black;">
+                            <button class="navbar-item nav-btn-secondary ">
+                                Login
+                            </button>
+                        </a>
+
+                        @* <a asp-action="Register" asp-controller="Account" style="color: black;">Join Us</a> *@
+                        <a href="/register" style="color: black;">
+                            <button class="navbar-item nav-btn primary-btn">
+                                Join Us
+                            </button>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="username">
+                        <span class="bg-opacity-10 bg-dark rounded-3 fa-font-awesome text-capitalize">
+                            <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
+                        </span>
+                        <a href="/logout">
+                            <button class="navbar-item nav-btn btn-secondary">Log Out</button>
+                        </a>
+                    </div>
+                }
             </ul>
-            @if (fullName is null)
-            {
-                <button class="navbar-item nav-btn primary-btn">
-                    @* <a asp-action="Register" asp-controller="Account" style="color: black;">Join Us</a> *@
-                    <a href="/register" style="color: black;">Join Us</a>
-                </button>
-            }
-            else
-            {
-                <div class="username">
-                    <span>
-                        <i class="fa-regular fa-user"></i>Hello, @fullName<label></label>
-                    </span>
-                    <a href="/logout">
-                        <button class="button">Log Out</button>
-                    </a>
-                </div>
-            }
         </div>
     </nav>
 

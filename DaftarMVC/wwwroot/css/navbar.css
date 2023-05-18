@@ -42,6 +42,24 @@ nav{
     color: #186B7A;
 }
 
+
+.nav-btn-secondary {
+    width: 120px;
+    height: 40px;
+    /*background-color: azure;*/
+    border-radius: 6px;
+    border: 1px solid azure;
+    color: azure;
+    transition: all ease-in-out 0.2s;
+    /*color: #186B7A;*/
+}
+
+
+.nav-btn-secondary:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
 .nav-btn:hover{
     background-color: aliceblue;
     cursor: pointer;

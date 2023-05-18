@@ -1,53 +1,34 @@
-@model IEnumerable<Teacher>
+@model List<Teacher>
 
 @{
-    Layout = null;
+    Layout = "_LayoutDaftar";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/navbar.css"/>
-    <link rel="stylesheet" href="css/teacher.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <title>Favorites</title>
-</head>
-<body>
-@Html.PartialAsync("NavBar2");
-
-<div>
-
-    <div class="text-center">
-        <h1 class="display-4">  Favorite Teachers Page </h1>
-    </div>
-    @* <div class="container"> *@
-    @*     <div style="padding: 50px; margin: 50px;" class="row gap-5"> *@
-    @*         @foreach (var item in Model) *@
-    @*         { *@
-    @*             <div class="card" style="width: 18rem;"> *@
-    @*                 <img src="@Url.Content(item.AvatarLink)" class="card-img-top" alt="Teacher Photo"> *@
-    @*                 <div class="card-body"> *@
-    @*                     <h4 class="card-title">@string.Concat(item.FirstName, " ", item.LastName)</h4> *@
-    @*                     <p class="card-title">@item.Major</p> *@
-    @*                     <p class="card-title">@item.Email</p> *@
-    @*                     <p class="card-title row"> *@
-    @*                         <span class="row-cols-2">@item.PhoneNumber </span><span class="row-cols-1">@item.MonthlyPrice</span> *@
-    @*                     </p> *@
-    @*                     <div class="row p-3 flex-row gap-3"> *@
-    @*                         <a href="/DashBoard/EditTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Edit Teacher</a> *@
-    @*                         <a href="/DashBoard/RemoveTeacher/@item.Teacher_Id" class="btn btn-secondary col-sm">Remove Teacher</a> *@
-    @*                     </div> *@
-    @*                 </div> *@
-    @* *@
-    @*             </div> *@
-    @*         } *@
-    @*     </div> *@
-    @* </div> *@
-    
+<div class="text-center">
+    <h1 class="display-4"> Favorite Teachers Page </h1>
 </div>
 
-@Html.PartialAsync("Footer");
-</body>
-</html>
+<div class="container">
+    <div style="padding: 50px; margin: 50px;" class="row gap-5">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="@Url.Content(item.AvatarLink)" class="card-img-top" alt="Teacher Photo">
+                    <div class="card-body">
+                        <h4 class="card-title">@string.Concat(item.FirstName, " ", item.LastName)</h4>
+                        <p class="card-title">@item.Major</p>
+                        <p class="card-title">@item.Email</p>
+                        <p class="card-title row">
+                            <span class="row-cols-2">@item.PhoneNumber </span><span class="row-cols-1">@item.MonthlyPrice</span>
+                        </p>
+                        <div class="row p-3 flex-row gap-3">
+                            <a href="/DashBoard/EditTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Edit Teacher</a>
+                            <a href="/DashBoard/RemoveTeacher/@item.Teacher_Id" class="btn btn-secondary col-sm">Remove Teacher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

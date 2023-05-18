@@ -39,28 +39,28 @@
                 
                 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
                 {
-                <div class="userName">
-                    <span>
-                        <i class="fa-solid fa-user"></i>
-                    </span>
-                    <input type="email" autofocus placeholder="mo@example.com" name="email"/>
-                </div>
-                
-                <div class="userPassword">
-                    <span>
-                        <i class="fa-solid fa-lock"></i>
-                    </span>
-                    <input type="password" placeholder="Password" name="password"/>
-                </div>
-                <div class="links">
-                    <div class="checkbox">
-                        <input id="rem" value="Remember Me" type="checkbox"/>
-                        <label for="rem" class="re">Remember Me</label>
+                    <div class="userName">
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="email" autofocus placeholder="mo@example.com" name="email"/>
                     </div>
-                    <a href="/Login">
-                        <span class="forget">Forget Password?</span>
-                    </a>
-                </div>
+                
+                    <div class="userPassword">
+                        <span>
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input type="password" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="links">
+                        <div class="checkbox">
+                            <input id="rem" value="Remember Me" type="checkbox"/>
+                            <label for="rem" class="re">Remember Me</label>
+                        </div>
+                        <a href="/Login">
+                            <span class="forget">Forget Password?</span>
+                        </a>
+                    </div>
                     <div class="buttons">
                         <button type="submit">
                             Log in
@@ -76,7 +76,7 @@
                             </a>
                         </div>
                     </div>
-            }
+                }
             </div>
         </div>
         <div class="login-left">
@@ -86,5 +86,6 @@
         </div>
     </div>
 </div>
+@await Html.PartialAsync("Footer");
 </body>
 </html>

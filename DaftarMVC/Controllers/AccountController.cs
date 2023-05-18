@@ -39,8 +39,16 @@ public class AccountController : Controller
         if (user is null) return View("Login");
 
         HttpContext.Session.SetInt32("UserId", user.Id);
-        HttpContext.Session.SetString("FullName", user.FirstName + " " + user.LastName);
+        
+        if (user is { FirstName: not null, LastName: not null })
+        {
+            HttpContext.Session.SetString("FullName", user.FirstName + " " + user.LastName);
+            HttpContext.Session.SetString("FirstName", user.LastName);
+            HttpContext.Session.SetString("LastName", user.LastName);
+        }
+        
         HttpContext.Session.SetString("Email", user.Email);
+        
         if (user.Avatar_link is not null)
             HttpContext.Session.SetString("UserImage", user.Avatar_link);
         if (user.PhoneNumber is not null)
@@ -77,6 +85,6 @@ public class AccountController : Controller
 
         _applicationDbContext.Users.Add(user);
         _applicationDbContext.SaveChanges();
-        return RedirectToAction("Index", "User");
+        return RedirectToAction("Login", "Account");
     }
 }

@@ -1,5 +1,4 @@
-:root
-{
+:root {
     --background-color: #186B7A;
     --background-Fbutton-color: #E9F7FA;
     --background-Sbutton-color: #f9bc60;
@@ -9,8 +8,8 @@
     --hover-color: #f9bc60;
     --randomColor-color: #e16162;
 }
-*
-{
+
+* {
     margin: 0;
     padding: 0;
     appearance: none;
@@ -20,14 +19,14 @@
     box-sizing: border-box;
     box-sizing: border-box;
 }
-html
-{
+
+html {
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
 }
+
 /* end */
-.page
-{
+.page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,8 +36,8 @@ html
     background-color: var(--background-color);
     overflow: hidden;
 }
-.page .box
-{
+
+.page .box {
     width: 900px;
     border-radius: 2%;
     background: var(--background-Fbutton-color);
@@ -49,7 +48,7 @@ html
     padding-bottom: 20px;
 }
 
-.register-right{
+.register-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,60 +56,69 @@ html
     gap: 1.9rem;
 }
 
-.register-right .inputs-wrapper{
+.register-right .inputs-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.register-right .inputs-wrapper input{
+
+.register-right .inputs-wrapper input {
     padding: 10px;
     background: none;
     border-bottom: 1px solid var(--background-color);
     outline: none;
 }
-.icon-text-wrapper{
+
+.icon-text-wrapper {
     display: flex;
     gap: 4px;
     justify-content: center;
     align-items: center;
 }
-.icon-text-wrapper span i{
+
+.icon-text-wrapper span i {
     width: 20px;
     text-align: center;
     color: var(--background-color);
 }
 
-.icon-text-wrapper select{
+.icon-text-wrapper select {
     padding: 12px 0 12px 0;
     margin-top: 6px;
     text-align: center;
     width: 70%;
 }
-.register-right .register-sign-in-wrapper{
+
+.register-right .register-sign-in-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3px;
 }
-.register-right .register-sign-in-wrapper .sign-in a{
+
+.register-right .register-sign-in-wrapper .sign-in a {
     font-size: 11px;
     color: var(--background-color);
 }
-.register-right .register-sign-in-wrapper .sign-in .sign{
+
+.register-right .register-sign-in-wrapper .sign-in .sign {
     color: var(--hover-color);
     font-size: larger;
     font-weight: 900;
     transition: all 0.3s ease 0s;
 }
-.register-right .register-sign-in-wrapper .sign-in .sign:hover{
+
+.register-right .register-sign-in-wrapper .sign-in .sign:hover {
     transition: all 0.3s ease 0s;
     font-size: 14px;
 }
+
 .register-right .register-sign-in-wrapper a {
     width: 100%;
 }
-.register-right .register-sign-in-wrapper button{
+
+.register-right .register-sign-in-wrapper button {
     width: 100%;
     padding: 10px;
     margin: 40px 0 0 0;
@@ -121,21 +129,21 @@ html
     transition: all 0.3s ease 0s;
 }
 
-.register-right .register-sign-in-wrapper button:hover{
+.register-right .register-sign-in-wrapper button:hover {
     background-color: var(--background-Sbutton-color);
     color: var(--Stxt-color);
 }
-.register-left
-{
+
+.register-left {
     background-size: 100% 100%;
     background-position: center;
 }
 
 .birthdate {
-    padding: 30px 30px;    
+    padding: 30px 30px;
     margin: 30px 30px;
 }
 
-.sign-in span{
+.sign-in span {
     font-size: 12px;
 }

@@ -2,64 +2,39 @@
 
 @{
     ViewBag.Title = "Teachers";
-    Layout = null;
+    Layout = "_LayoutDaftar";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap"
-          rel="stylesheet"/>
-    <script src="https://kit.fontawesome.com/87603dad33.js"
-            crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/navbar.css"/>
-    <link rel="stylesheet" href="css/teacher.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <link rel="shortcut icon" href="~/Image/Icon-Taps.jpg"/>
-    <title>Daftar</title>
-</head>
+<link rel="stylesheet" href="css/teacher.css"/>
 
-<body>
-@await Html.PartialAsync("NavBar2");
-<div style="padding: 20px; margin: 20px">
-    <div class="search-box">
-        <div class="">
-            <input type="text" placeholder="Search a Teacher">
-        </div>
+<div class="search-box">
+    <div class="">
+        <input type="text" placeholder="Search a Teacher">
     </div>
-    @using (Html.BeginForm())
-    {
-@foreach (var item in Model)
-{
-            <div class="card" style="width: 18rem;">
-                <img src="@Url.Content(item.AvatarLink)" class="card-img-top" alt="Teacher Photo">
-                <div class="card-body">
-                    <h4 class="card-title">@string.Concat(item.FirstName, " ", item.LastName)</h4>
-                    <p class="card-title">@item.Major</p>
-                    <p class="card-title">@item.Email</p>
-                    <p class="card-title row">
-                        <span class="row-cols-2">@item.PhoneNumber </span><span class="row-cols-1">@item.MonthlyPrice</span>
-                    </p>
-                    <div class="row p-3 flex-row gap-3">
-                        <a href="/Favorite/AddTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Add Favorite</a>
-                        <a href="/Teachers/@item.Teacher_Id" class="btn btn-secondary col-sm">View Details</a>
-                    </div>
-                </div>
-
-            </div>
-    
-}
-    }
 </div>
 
-@await Html.PartialAsync("Footer")
-</body>
-<script src="js/teacher.js"></script>
-</html>
+@using (Html.BeginForm())
+{
+    <div class="row gap-0 p-5">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img src="@Url.Content(item.AvatarLink)" class="card-img-top" style="width: 20rem; height: 20rem; object-fit: cover" alt="Teacher Photo">
+                    <div class="card-body">
+                        <h4 class="card-title">@string.Concat(item.FirstName, " ", item.LastName)</h4>
+                        <p class="card-title">@item.Major</p>
+                        <p class="card-title">@item.Email</p>
+                        <p class="card-title row">
+                            <span class="row-cols-2">@item.PhoneNumber </span><span class="row-cols-1">@item.MonthlyPrice</span>
+                        </p>
+                        <div class="row p-3 flex-row gap-3">
+                            <a href="/Favorite/AddTeacher/@item.Teacher_Id" class="btn btn-primary col-sm">Add Favorite</a>
+                            <a href="/Teachers/@item.Teacher_Id" class="btn btn-secondary col-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

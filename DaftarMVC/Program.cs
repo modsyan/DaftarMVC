@@ -64,12 +64,6 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
-    name: "layout",
-    pattern: "layout",
-    defaults: new {controller = "Home", action = "HomeWithLayout"}
-);
-
-app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
